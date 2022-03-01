@@ -20,7 +20,7 @@ body {
 /* Responsive design stuff */
 @media only screen and (min-width: 992px) {
     body {
-        grid-template-rows: 0.3fr repeat(10, minmax(0, 1fr)) 0.3fr;
+        grid-template-rows: 0.2fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
     }
     #menu_container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -36,38 +36,39 @@ body {
 
 @media only screen and (max-width: 992px) {
     body {
-        grid-template-rows: 0.1fr repeat(10, minmax(0, 1fr)) 0.1fr;
+        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
     }
     #menu_container {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-rows: repeat(3, minmax(0, 1fr));
     }
     footer {
-        font-size: 50%;
+        font-size: 70%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     body {
-        grid-template-rows: 0.05fr repeat(10, minmax(0, 1fr)) 0.05fr;
+        grid-template-rows: 0.2fr 0.2fr repeat(8, minmax(0, 1fr)) 0.2fr 0.1fr;  /* Decreased gap between menu and navbar/footer */
     }
     #menu_container {
         grid-template-columns: minmax(0, 1fr);
         grid-template-rows: repeat(6, minmax(0, 1fr));
     }
     footer {
-        font-size: 40%;
+        font-size: 60%;
     }
     
 }
 
 @media only screen and (max-width: 420px) {
     footer {
-        font-size: 30%;
+        font-size: 50%;
     }
 }
 
 #navbarCollapsed {
+    cursor: pointer;
     background: black;
     grid-column: 1/12;
     grid-row-end: 2;
@@ -75,7 +76,9 @@ body {
 }
 
 #navbarExpanded {
+    position: sticky;
     grid-column: 1/12;
+    grid-row: 2/6;
     max-height: 0%;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
