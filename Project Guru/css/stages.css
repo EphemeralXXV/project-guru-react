@@ -1,0 +1,13 @@
+.stageContainer {
+    width: 100%;
+    max-width: 16%;
+}
+
+.stageImage{
+    display: block;
+}
+
+.stageName {
+    display: block;
+    font-size: 100px
+}
