@@ -26,6 +26,10 @@ body {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
     }
+    footer {
+        
+    font-size: 1.5vh;
+    }
 }
 
 @media only screen and (max-width: 1280px) {
@@ -36,14 +40,14 @@ body {
 
 @media only screen and (max-width: 992px) {
     body {
-        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
+        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.05fr;
     }
     #menu_container {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-rows: repeat(3, minmax(0, 1fr));
     }
     footer {
-        font-size: 70%;
+        font-size: 65%;
     }
 }
 
@@ -56,14 +60,14 @@ body {
         grid-template-rows: repeat(6, minmax(0, 1fr));
     }
     footer {
-        font-size: 60%;
+        font-size: min(60%, 8px);
     }
     
 }
 
 @media only screen and (max-width: 420px) {
     footer {
-        font-size: 50%;
+        font-size: min(50%, 7px);
     }
 }
 
