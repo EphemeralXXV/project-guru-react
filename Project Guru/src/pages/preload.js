@@ -1,18 +1,18 @@
 /* Button animation */
-function turnButtonRed(button){
-    button.getElementsByClassName("leftArrow")[0].src = "../resources/navlefthover.png";
-    button.getElementsByClassName("rightArrow")[0].src = "../resources/navrighthover.png";
-    button.getElementsByTagName("span")[0].style.color = 'red';
+export function turnButtonRed(button){
+    // button.getElementsByClassName("leftArrow")[0].src = "../resources/navlefthover.png";
+    // button.getElementsByClassName("rightArrow")[0].src = "../resources/navrighthover.png";
+    // button.getElementsByTagName("span")[0].style.color = 'red';
 }
 
-function turnButtonWhite(button){
-    button.getElementsByClassName("leftArrow")[0].src = "../resources/navleft.png";
-    button.getElementsByClassName("rightArrow")[0].src = "../resources/navright.png";
-    button.getElementsByTagName("span")[0].style.color = 'yellow';
+export function turnButtonWhite(button){
+    // button.getElementsByClassName("leftArrow")[0].src = "../resources/navleft.png";
+    // button.getElementsByClassName("rightArrow")[0].src = "../resources/navright.png";
+    // button.getElementsByTagName("span")[0].style.color = 'yellow';
 }
 
 /* Navbar expansion */
-function expandNavbar() {
+export function expandNavbar() {
     let navbarExpanded = document.getElementById("navbarExpanded");
     let navbarExpandedStyle = window.getComputedStyle(navbarExpanded); // Get the #navbarExpanded CSS block
     let maxHeight = navbarExpandedStyle.getPropertyValue('max-height'); // Read the value of max-height for #navbarExpanded

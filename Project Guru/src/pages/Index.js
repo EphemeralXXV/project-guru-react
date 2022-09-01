@@ -1,4 +1,8 @@
+import favo from '../resources/favo.gif';
+import navleft from '../resources/navleft.png';
+import navright from '../resources/navright.png';
 import spinningKey from '../resources/spinningKey.gif';
+import { expandNavbar, turnButtonRed, turnButtonWhite } from './preload';
 import Styles from './Index.module.css';
 
 const IndexPage = () => {
@@ -16,9 +20,9 @@ const IndexPage = () => {
     // </head>
     return (
         <div>
-            <div id = {Styles.navbarCollapsed} onclick="expandNavbar()" />
+            <div id = {Styles.navbarCollapsed} onClick = {expandNavbar} />
             <div id = {Styles.navbarExpanded}>
-                <img src = "../resources/favo.gif" />
+                <img src = {favo} />
             </div>
             
             <div id = {Styles.menu_container}> {/*Container for the whole menu dashboard*/}
@@ -27,11 +31,11 @@ const IndexPage = () => {
                         <img src = {spinningKey} alt = "Forum" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_forum_button}> {/*Container for menu button*/}
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "forum.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.forum_button}>Forum</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -41,11 +45,11 @@ const IndexPage = () => {
                         <img src = "../resources/spinningReturn.gif" alt = "Contests" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_contests_button}>
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "contests.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.forum_button}>Contests</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -55,11 +59,11 @@ const IndexPage = () => {
                         <img src = "../resources/spinningKey.gif" alt = "Downloads" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_downloads_button}>
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "downloads.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.downloads_button}>Downloads</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -69,11 +73,11 @@ const IndexPage = () => {
                         <img src = "../resources/spinningReturn.gif" alt = "Wiki" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_wiki_button}>
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "wiki.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.wiki_button}>Wiki</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -83,11 +87,11 @@ const IndexPage = () => {
                         <img src = "../resources/spinningKey.gif" alt = "Wiki" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_community_button}>
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "community.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.community_button}>Community</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -97,11 +101,11 @@ const IndexPage = () => {
                         <img src = "../resources/spinningReturn.gif" alt = "Misc" />
                     </div>
                     <div className = {Styles.menu_button} id = {Styles.menu_misc_button}>
-                        <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)">
+                        <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                             <a href = "misc.html">
-                                <img className = {Styles.leftArrow} src='../resources/navleft.png' />
+                                <img className = {Styles.leftArrow} src = {navleft} />
                                 <span className = {Styles.button_center} id = {Styles.wiki_button}>Misc</span>
-                                <img className = {Styles.rightArrow} src = '../resources/navright.png' />
+                                <img className = {Styles.rightArrow} src = {navright} />
                             </a>
                         </div>  
                     </div>
@@ -109,7 +113,7 @@ const IndexPage = () => {
             </div>
             
             <footer>
-                <p>https://ephemeralxxv.github.io/ Copyright <span style="font-family: sans-serif">&copy;</span> Project Guru, 2022. All rights reserved.</p>
+                <p>https://ephemeralxxv.github.io/ Copyright <span style = {{'font-family': 'sans-serif'}}>&copy;</span> Project Guru, 2022. All rights reserved.</p>
             </footer>
         </div>
     );
