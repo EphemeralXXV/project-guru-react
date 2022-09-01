@@ -1,0 +1,57 @@
+/* Global settings */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    font-family: "rcFont", Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+@font-face{
+    font-family: "rcFont";
+    src: url("@/resources/rcfont.ttf");
+}
+
+/* Responsive design stuff */
+@media only screen and (min-width: 992px) {
+    #page {
+        grid-template-rows: 0.2fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
+    }
+    #menuContainer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #page {
+        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.05fr;
+    }
+    #menuContainer {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #page {
+        grid-template-rows: 0.2fr 0.2fr repeat(8, minmax(0, 1fr)) 0.2fr 0.1fr;  /* Decreased gap between menu and navbar/footer */
+    }
+    #menuContainer {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+    }
+}
+
+#menuContainer {
+    overflow: inherit;
+    grid-column: 2/10;
+    grid-row: 3/11;
+    display: grid;
+}
