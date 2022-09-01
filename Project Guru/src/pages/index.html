@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Index</title>
+        <link rel = "icon" type = "image/png" href = "../resources/PG/icon.png">
+        <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "../css/style.css">
+        <script src = "https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity = "sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src = "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity = "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin = "anonymous"></script>
+        <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity = "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin = "anonymous"></script>
+        <script type = "text/javascript" src = ../js/preload.js></script>
+    </head>
+    
+    <body>
+        <div id = "navbarCollapsed" onclick="expandNavbar()">
+        </div>
+        <div id = "navbarExpanded">
+            <img src = "../resources/favo.gif"/>
+        </div>
+        
+        <div id = "menu_container"> <!-- Container for the whole menu dashboard -->
+            <div class = "menu_item" id = "menu_forum"> <!-- Container for individual menu item (icon + button) -->
+                <div class = "menu_icon" id = "menu_forum_icon"> <!-- Container for spinning menu icon -->
+                    <img src = "../resources/spinningKey.gif" alt = "Forum">
+                </div>
+                <div class = "menu_button" id = "menu_forum_button"> <!-- Container for menu button -->
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "forum.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "forum_button">Forum</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+            <div class = "menu_item" id = "menu_contests">
+                <div class = "menu_icon" id = "menu_contests_icon">
+                    <img src = "../resources/spinningReturn.gif" alt = "Contests">
+                </div>
+                <div class = "menu_button" id = "menu_contests_button">
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "contests.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "forum_button">Contests</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+            <div class = "menu_item" id = "menu_downloads">
+                <div class = "menu_icon" id = "menu_downloads_icon">
+                    <img src = "../resources/spinningKey.gif" alt = "Downloads">
+                </div>
+                <div class = "menu_button" id = "menu_downloads_button">
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "downloads.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "downloads_button">Downloads</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+            <div class = "menu_item" id = "menu_wiki">
+                <div class = "menu_icon" id = "menu_wiki_icon">
+                    <img src = "../resources/spinningReturn.gif" alt = "Wiki">
+                </div>
+                <div class = "menu_button" id = "menu_wiki_button">
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "wiki.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "wiki_button">Wiki</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+            <div class = "menu_item" id = "menu_community">
+                <div class = "menu_icon" id = "menu_community_icon">
+                    <img src = "../resources/spinningKey.gif" alt = "Wiki">
+                </div>
+                <div class = "menu_button" id = "menu_community_button">
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "community.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "community_button">Community</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+            <div class = "menu_item" id = "menu_misc">
+                <div class = "menu_icon" id = "menu_misc_icon">
+                    <img src = "../resources/spinningReturn.gif" alt = "Misc">
+                </div>
+                <div class = "menu_button" id = "menu_misc_button">
+                    <div onmouseover = "turnButtonRed(this)" onmouseout = "turnButtonWhite(this)"><a href = "misc.html"><img class = "leftArrow" src='../resources/navleft.png'><span class = "button_center" id = "wiki_button">Misc</span><img class = "rightArrow" src = '../resources/navright.png'></a></div>  
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>https://ephemeralxxv.github.io/ Copyright <span style="font-family: sans-serif">&copy;</span> Project Guru, 2022. All rights reserved.</p>
+        </footer>
+    </body>
+    
+</html>
