@@ -49,11 +49,12 @@ const stageNames = [
 function getStagesDiv(){
     const stagesDiv = document.createElement("div");
     for(let rallyNumber = 0; rallyNumber < 6; rallyNumber++){
-        const rallyDiv = document.createElement("div");
+        const rallyContainer = document.createElement("div");
+        rallyContainer.className = "rallyContainer"
         for(let stageNumber= 0; stageNumber < 6; stageNumber++){
-            rallyDiv.appendChild(getStageContainer(6*rallyNumber+stageNumber))
+            rallyContainer.appendChild(getStageContainer(6*rallyNumber+stageNumber))
         }
-        stagesDiv.appendChild(rallyDiv)
+        stagesDiv.appendChild(rallyContainer)
     }
     return stagesDiv
 }
