@@ -8,17 +8,17 @@ import Styles from './MenuItem.module.css';
 const MenuItem = (props) => {
     return (
         <div className = {Styles.menuItem} id = {Styles.menuForum}> {/*Container for individual menu item (icon + button)*/}
-            <div className = {Styles.menuIcon} id = {`Styles.menu${props.name}Icon`}> {/*Container for spinning menu icon*/}
+            <div className = {Styles.menuIcon} id = {Styles[`menu${props.name}Icon`]}> {/*Container for spinning menu icon*/}
                 <img src = {props.img} alt = {props.name} />
             </div>
-            <div className = {Styles.menuButton} id = {`Styles.menu${props.name}Button`}> {/*Container for menu button*/}
+            <div className = {Styles.menuButton} id = {Styles[`menu${props.name}Button`]}> {/*Container for menu button*/}
                 <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
                     <a href = "forum.html">
-                        <img className = {Styles.leftArrow} src = {navLeft} />
-                        <span className = {Styles.buttonCenter} id = {`Styles.${props.name.toLowerCase()}Button`}>
+                        <img className = {Styles.leftArrow} src = {navLeft} alt = 'Left arrow' />
+                        <span className = {Styles.buttonCenter} id = {Styles[`${props.name.toLowerCase()}Button`]}>
                             {props.name}
                         </span>
-                        <img className = {Styles.rightArrow} src = {navRight} />
+                        <img className = {Styles.rightArrow} src = {navRight} alt = 'Right arrow' />
                     </a>
                 </div>  
             </div>
