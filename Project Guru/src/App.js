@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import IndexPage from './pages/Index';
-import logo from './logo.svg';
 import './App.css';
 
 const App = () => {

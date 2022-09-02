@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
 }
-body {
+
+#root {
     font-family: "rcFont", Arial, Helvetica, sans-serif;
     text-align: center;
     background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
@@ -19,7 +20,7 @@ body {
 
 /* Responsive design stuff */
 @media only screen and (min-width: 992px) {
-    body {
+    #root {
         grid-template-rows: 0.2fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
     }
     #menu_container {
@@ -35,7 +36,7 @@ body {
 }
 
 @media only screen and (max-width: 992px) {
-    body {
+    #root {
         grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
     }
     #menu_container {
@@ -48,7 +49,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    body {
+    #root {
         grid-template-rows: 0.2fr 0.2fr repeat(8, minmax(0, 1fr)) 0.2fr 0.1fr;  /* Decreased gap between menu and navbar/footer */
     }
     #menu_container {
@@ -91,31 +92,6 @@ body {
     grid-column: 2/10;
     grid-row: 3/11;
     display: grid;
-}
-
-.menu_item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2%;
-}
-
-.menu_icon img {
-    height: 270px;
-    max-width: 90%;
-    max-height: 90%;
-    padding-bottom: 20px;
-}
-
-.button_center {
-    display: inline-block;
-    vertical-align: middle;
-    height: 29px;
-    background-image: url('../resources/navmid.png');
-    background-size: contain;
-    text-decoration: none;
-    color: yellow;
 }
 
 footer {
