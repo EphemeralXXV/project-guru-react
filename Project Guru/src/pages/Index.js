@@ -9,7 +9,7 @@ import Styles from './Index.module.css';
 
 const IndexPage = () => {
     return (
-        <div id = 'App'>
+        <div id = {Styles.page}>
             <div id = {Styles.navbarCollapsed} onClick = {expandNavbar} />
             <div id = {Styles.navbarExpanded}>
                 <img src = {favo} />
