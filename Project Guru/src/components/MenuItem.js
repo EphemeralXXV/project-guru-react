@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { turnButtonRed, turnButtonWhite } from '../pages/preload';
 
 import navLeft from '../resources/navleft.png';
@@ -13,13 +14,13 @@ const MenuItem = (props) => {
             </div>
             <div className = {Styles.menuButton} id = {Styles[`menu${props.name}Button`]}> {/*Container for menu button*/}
                 <div onMouseOver = {turnButtonRed(this)} onMouseOut = {turnButtonWhite(this)}>
-                    <a href = "forum.html">
+                    <Link to = {`/${props.name.toLowerCase()}`}>
                         <img className = {Styles.leftArrow} src = {navLeft} alt = 'Left arrow' />
                         <span className = {Styles.buttonCenter} id = {Styles[`${props.name.toLowerCase()}Button`]}>
                             {props.name}
                         </span>
                         <img className = {Styles.rightArrow} src = {navRight} alt = 'Right arrow' />
-                    </a>
+                    </Link>
                 </div>  
             </div>
         </div>
