@@ -1,0 +1,17 @@
+#navbarCollapsed {
+    cursor: pointer;
+    background: black;
+    grid-column: 1/12;
+    grid-row-end: 2;
+    opacity: 0.5;
+}
+
+#navbarExpanded {
+    position: sticky;
+    grid-column: 1/12;
+    grid-row: 2/6;
+    max-height: 0%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background: white;
+}

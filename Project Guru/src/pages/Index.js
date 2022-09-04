@@ -1,21 +1,17 @@
-import favo from '../resources/favo.gif';
 import spinningKey from '../resources/spinningKey.gif';
 import spinningReturn from '../resources/spinningReturn.gif';
 
-import { expandNavbar } from './preload';
 import MenuItem from '../components/MenuItem';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import Styles from './Index.module.css';
 
 const IndexPage = () => {
     return (
         <div id = {Styles.page}>
-            <div id = {Styles.navbarCollapsed} onClick = {expandNavbar} />
-            <div id = {Styles.navbarExpanded}>
-                <img src = {favo} />
-            </div>
-            
-            <div id = {Styles.menu_container}> {/*Container for the whole menu dashboard*/}
+            <Navbar />
+            <div id = {Styles.menuContainer}> {/*Container for the whole menu dashboard*/}
                 <MenuItem name = 'Forum' img = {spinningKey} />
                 <MenuItem name = 'Contests' img = {spinningReturn} />
                 <MenuItem name = 'Downloads' img = {spinningKey} />
@@ -93,10 +89,7 @@ const IndexPage = () => {
                     </div>
                 </div> */}
             </div>
-            
-            <footer>
-                <p>https://ephemeralxxv.github.io/ Copyright <span style = {{fontFamily: 'sans-serif'}}>&copy;</span> Project Guru, 2022. All rights reserved.</p>
-            </footer>
+            <Footer />
         </div>
     );
 }

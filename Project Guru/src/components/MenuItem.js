@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { turnButtonRed, turnButtonWhite } from '../pages/preload';
+import { turnButtonRed, turnButtonWhite } from '../common/preload';
 
 import navLeft from '../resources/navleft.png';
 import navRight from '../resources/navright.png';
