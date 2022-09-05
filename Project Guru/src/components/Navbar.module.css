@@ -10,7 +10,6 @@
     position: sticky;
     grid-column: 1/12;
     grid-row: 2/6;
-    max-height: 0%;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background: white;
