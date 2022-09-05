@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import favo from '@/resources/favo.gif';
 
-import Styles from './Navbar.module.css';
+import Styles from './Navbar.module.scss';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);

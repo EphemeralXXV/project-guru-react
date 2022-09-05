@@ -6,7 +6,7 @@ import navRight from '@/resources/navright.png';
 import navLeftHovered from '@/resources/navlefthover.png';
 import navRightHovered from '@/resources/navrighthover.png';
 
-import Styles from './MenuItem.module.css';
+import Styles from './MenuItem.module.scss';
 
 const MenuItem = (props) => {
     const [buttonHovered, setButtonHovered] = useState(false);
