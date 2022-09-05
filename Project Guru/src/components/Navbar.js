@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import favo from '../resources/favo.gif';
+import favo from '@/resources/favo.gif';
 
 import Styles from './Navbar.module.css';
 

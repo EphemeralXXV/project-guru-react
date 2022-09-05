@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import navLeft from '../resources/navleft.png';
-import navRight from '../resources/navright.png';
-import navLeftHovered from '../resources/navlefthover.png';
-import navRightHovered from '../resources/navrighthover.png';
+import navLeft from '@/resources/navleft.png';
+import navRight from '@/resources/navright.png';
+import navLeftHovered from '@/resources/navlefthover.png';
+import navRightHovered from '@/resources/navrighthover.png';
 
 import Styles from './MenuItem.module.css';
 
