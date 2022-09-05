@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import { expandNavbar } from '../common/preload';
+import { useState } from 'react';
 
 import favo from '../resources/favo.gif';
 
