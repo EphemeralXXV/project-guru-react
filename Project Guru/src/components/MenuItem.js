@@ -14,7 +14,7 @@ const MenuItem = (props) => {
         setButtonHovered(prevState => !prevState);
     }
     return (
-        <div className = {Styles.menuItem} id = {Styles.menuForum}> {/*Container for individual menu item (icon + button)*/}
+        <div className = {Styles.menuItem} id = {Styles[`menu${props.name}`]}> {/*Container for individual menu item (icon + button)*/}
             <div className = {Styles.menuIcon} id = {Styles[`menu${props.name}Icon`]}> {/*Container for spinning menu icon*/}
                 <img src = {props.img} alt = {props.name} />
             </div>
