@@ -6,6 +6,7 @@ import DownloadsPage from './pages/Downloads';
 import WikiPage from './pages/Wiki';
 import CommunityPage from './pages/Community';
 import MiscPage from './pages/Misc';
+import StagesPage from './pages/Stages';
 import './App.css';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Route path = 'wiki' element = {<WikiPage />} />
       <Route path = 'community' element = {<CommunityPage />} />
       <Route path = 'misc' element = {<MiscPage />} />
+      <Route path = 'stages' element = {<StagesPage />} />
     </Routes>
   );
 }
