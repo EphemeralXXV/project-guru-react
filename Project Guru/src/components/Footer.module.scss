@@ -1,3 +1,9 @@
+@media only screen and (min-width: 1280px) {
+    footer {
+        font-size: 1.5vh;
+    }
+}
+
 @media only screen and (max-width: 1280px) {
     footer {
         font-size: 80%;
@@ -6,23 +12,23 @@
 
 @media only screen and (max-width: 992px) {
     footer {
-        font-size: 70%;
+        font-size: 65%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     footer {
-        font-size: 60%;
+        font-size: min(60%, 0.5rem);
     }
 }
 
 @media only screen and (max-width: 420px) {
     footer {
-        font-size: 50%;
+        font-size: min(50%, 0.44rem);
     }
 }
 
-footer {
+#footer {
     display: flex;
     flex-direction: column;
     justify-content: center;

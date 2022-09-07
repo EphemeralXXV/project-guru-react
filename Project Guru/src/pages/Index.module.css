@@ -15,7 +15,7 @@
 
 @font-face{
     font-family: "rcFont";
-    src: url('../resources/rcfont.ttf');
+    src: url('@/resources/rcfont.ttf');
 }
 
 /* Responsive design stuff */
@@ -31,7 +31,7 @@
 
 @media only screen and (max-width: 992px) {
     #page {
-        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.1fr;
+        grid-template-rows: 0.1fr repeat(10, minmax(0, 0.2fr)) 0.05fr;
     }
     #menuContainer {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

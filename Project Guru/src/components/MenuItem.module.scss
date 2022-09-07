@@ -8,7 +8,6 @@
         height: 270px;
         max-width: 90%;
         max-height: 90%;
-        padding-bottom: 20px;
     }
 }
 
@@ -19,17 +18,4 @@
     background-image: url('../resources/navmid.png');
     background-size: contain;
     text-decoration: none;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-row-start: 12;
-    grid-column: 1/11;
-    color: white;
-    background-color: black;
-    p {
-        margin: 0;
-    }
 }
