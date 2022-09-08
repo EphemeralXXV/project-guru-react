@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Wiki = () => {
     return (
         <>
-            <p>Welcome to the Wiki page!</p>
+            <Link to = "/stages">Stages</Link>
         </>
     );
 }

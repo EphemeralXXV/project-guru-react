@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import favo from '@/resources/favo.gif';
+import favo from "@/resources/favo.gif";
 
-import Styles from './Navbar.module.scss';
+import Styles from "./Navbar.module.scss";
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -12,8 +12,8 @@ const Navbar = () => {
     return (
         <>
             <div id = {Styles.navbarCollapsed} onClick = {handleNavbarToggle} />
-            <div id = {Styles.navbarExpanded} style = {navbarOpen ? {maxHeight: '100%'} : {maxHeight: '0%'}}>
-                <img src = {favo} alt = 'Favo' />
+            <div id = {Styles.navbarExpanded} style = {navbarOpen ? {maxHeight: "100%"} : {maxHeight: "0%"}}>
+                <img src = {favo} alt = "Favo" />
             </div>        
         </>
     );

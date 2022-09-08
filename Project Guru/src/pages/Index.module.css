@@ -15,7 +15,7 @@
 
 @font-face{
     font-family: "rcFont";
-    src: url('@/resources/rcfont.ttf');
+    src: url("@/resources/rcfont.ttf");
 }
 
 /* Responsive design stuff */
