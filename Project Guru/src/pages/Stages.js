@@ -1,8 +1,8 @@
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
+
 import { toFixedLengthString } from "@/common/util";
 import { stageNames } from "@/common/stages";
-
-import { Helmet } from "react-helmet";
 
 import Styles from "./Stages.module.css";
 
