@@ -1,4 +1,5 @@
 {
+  "homepage": "https://ephemeralxxv.github.io/project-guru-react",
   "name": "project-guru",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "craco": "^0.0.3",
     "craco-alias": "^3.0.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -19,6 +21,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "craco test"
   },
