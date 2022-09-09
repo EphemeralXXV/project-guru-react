@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-guru-react/static/css/main.9403bd88.css",
-    "main.js": "/project-guru-react/static/js/main.6fe77587.js",
+    "main.js": "/project-guru-react/static/js/main.48384ff7.js",
     "static/js/787.e7df630a.chunk.js": "/project-guru-react/static/js/787.e7df630a.chunk.js",
     "static/media/spinningArcade.gif": "/project-guru-react/static/media/spinningArcade.878c628c6d9df8f3ca7d.gif",
     "static/media/spinningComputers.gif": "/project-guru-react/static/media/spinningComputers.33d1f1d85fa6213d2836.gif",
@@ -93,11 +93,11 @@
     "static/media/logo.svg": "/project-guru-react/static/media/logo.6ce24c58023cc2f8fd88.svg",
     "index.html": "/project-guru-react/index.html",
     "main.9403bd88.css.map": "/project-guru-react/static/css/main.9403bd88.css.map",
-    "main.6fe77587.js.map": "/project-guru-react/static/js/main.6fe77587.js.map",
+    "main.48384ff7.js.map": "/project-guru-react/static/js/main.48384ff7.js.map",
     "787.e7df630a.chunk.js.map": "/project-guru-react/static/js/787.e7df630a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9403bd88.css",
-    "static/js/main.6fe77587.js"
+    "static/js/main.48384ff7.js"
   ]
 }
