@@ -2,7 +2,7 @@
   "homepage": "https://ephemeralxxv.github.io/project-guru-react",
   "name": "project-guru",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@testing-library/jest-dom": "^5.16.5",
