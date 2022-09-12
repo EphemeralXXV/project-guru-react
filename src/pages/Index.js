@@ -28,7 +28,7 @@ const IndexPage = () => {
             <div id = {Styles.page}>    
                 <Navbar />
                 <div id = {Styles.menuContainer}> {/*Container for the whole menu dashboard*/}
-                    <MenuItem name = "Forum" img = {spinningComputers} />
+                    <MenuItem name = "Forum" img = {spinningComputers} redirect = {"https://rc2000.forumotion.com/"} />
                     <MenuItem name = "Contests" img = {spinningArcade} />
                     <MenuItem name = "Downloads" img = {spinningFloppy} />
                     <MenuItem name = "Wiki" img = {spinningSign} />

@@ -13,6 +13,23 @@ const MenuItem = (props) => {
     const handleButtonHover = () => {
         setButtonHovered(prevState => !prevState);
     }
+    const wrapper = (content) => {  // Conditional wrapper — use <a> if external link, otherwise use <Link>
+        return props.redirect ?
+            <a href = {props.redirect}>
+                {content}
+            </a> :
+            <Link to = {`${props.name.toLowerCase()}`}>
+                {content}
+            </Link>
+    }
+    const content = <>
+        <img className = {Styles.leftArrow} src = {buttonHovered ? navLeftHovered : navLeft} alt = "Left arrow" />
+        <span className = {Styles.buttonCenter} id = {Styles[`${props.name.toLowerCase()}Button`]} style = {buttonHovered ? {color: "red"} : {color: "yellow"}}>
+            {props.name}
+        </span>
+        <img className = {Styles.rightArrow} src = {buttonHovered ? navRightHovered : navRight} alt = "Right arrow" />
+    </>;
+
     return (
         <div className = {Styles.menuItem} id = {Styles[`menu${props.name}`]}> {/*Container for individual menu item (icon + button)*/}
             <div className = {Styles.menuIcon} id = {Styles[`menu${props.name}Icon`]}> {/*Container for spinning menu icon*/}
@@ -20,13 +37,7 @@ const MenuItem = (props) => {
             </div>
             <div className = {Styles.menuButton} id = {Styles[`menu${props.name}Button`]}> {/*Container for menu button*/}
                 <div onMouseOver = {handleButtonHover} onMouseOut = {handleButtonHover}>
-                    <Link to = {`/${props.name.toLowerCase()}`}>
-                        <img className = {Styles.leftArrow} src = {buttonHovered ? navLeftHovered : navLeft} alt = "Left arrow" />
-                        <span className = {Styles.buttonCenter} id = {Styles[`${props.name.toLowerCase()}Button`]} style = {buttonHovered ? {color: "red"} : {color: "yellow"}}>
-                            {props.name}
-                        </span>
-                        <img className = {Styles.rightArrow} src = {buttonHovered ? navRightHovered : navRight} alt = "Right arrow" />
-                    </Link>
+                    {wrapper(content)}  {/*Link button*/}
                 </div>  
             </div>
         </div>
