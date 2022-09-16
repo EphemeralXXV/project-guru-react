@@ -2,14 +2,28 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-column: 1/12;
+    grid-column: 1/-1; // From first to last (all columns)
     grid-row: 1/5;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; // Behind actual Navbar, but in front of the rest of the page
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#navbarCollapsed, #navbarExpanded {
+    z-index: 2;
 }
 
 #navbarCollapsed {
     cursor: pointer;
     background: black;
-    grid-column: 1/-1; // From first to last (all columns)
+    grid-column: 1/-1;
     grid-row-end: 2;
     opacity: 0.5;
 }
@@ -23,6 +37,6 @@
     grid-column: 1/-1;
     grid-row: 2/5;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease;
     background: white;
 }
