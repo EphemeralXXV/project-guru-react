@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-import downloadIcon from '@/resources/download_icon.png';
+import downloadIcon from "@/resources/download_icon.png";
+import ratingBarEmpty from "@/resources/rating_bar_empty.png";
+import ratingBarFill from "@/resources/rating_bar_fill.png";
 
-import Styles from './DownloadsPreview.module.scss';
+import Styles from "./DownloadsPreview.module.scss";
 
 const DownloadsPreview = (props) => {
     const [thumbnailHovered, setThumbnailHovered] = useState(false);
@@ -25,20 +27,21 @@ const DownloadsPreview = (props) => {
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link to = {"./" + props.name}>
-                    <img className = {Styles.thumbnailPic} src = {props.thumbnail} alt = {props.name} />
+                    <img className = {Styles.thumbnailPic} src = {props.thumbnail} alt = {props.name} title = {props.name} />
                 </Link>
-                <a href = "https://mega.nz/#!UlAiWKDa!PLThVqBPFf_gzXL-WvfcYIUNkMQPaoiVKcUNUsUsA10" target = "_blank" >
+                <a href = {props.downloadLink} target = "_blank" rel = "noreferrer" >
                     <img className = {Styles.downloadIcon} src = {downloadIcon} style = {{visibility: thumbnailHovered ? "visible" : "hidden"}} alt = "Download" title = "Download" />
                 </a>
             </div>
             <div className = {Styles.content}>
                 <p className = {Styles.description}>
                     {abridgeDescription(props.description)}
-                    <br />
-                    <Link to = {"./" + props.name}>Read more...</Link>
+                    <Link to = {"./" + props.name} style = {{display: "inline-block", float: "right", lineHeight: "1.5"}}>
+                        &#0020;Read more... {/* &#0020; = whitespace */}
+                    </Link>
                 </p>
                 <hr style = {{margin: "8px 0"}}/>
-                <p>Category:&#0020; {/* &#0020; = whitespace */}
+                <p>Category:&#0020;
                     <Link to = {"/category/" + props.category}>
                         {props.category}
                     </Link>
@@ -48,8 +51,13 @@ const DownloadsPreview = (props) => {
                         {props.author}
                     </Link>
                 </p>
-                <p>Downloads: 999</p>
-                <p>Rating: 10/10</p>
+                <p>Downloads: {props.downloadCount}</p>
+                <p>Rating:&#0020;
+                    <div className = {Styles.ratingBar} title = {props.rating / 10 + "/10"}>
+                        <img src = {ratingBarFill} alt = {props.rating} className = {Styles.ratingBarFill} style = {{clipPath: "inset(0px " + (100 - props.rating) + "% 0px 0px)"}} />
+                        <img src = {ratingBarEmpty} alt = {props.rating} className = {Styles.ratingBarEmpty} />
+                    </div>
+                </p>
             </div>
         </div>
     );

@@ -1,3 +1,11 @@
+a, Link {
+    text-decoration: none;
+    color: yellow;
+    &:hover {
+        color: red;
+    }
+}
+
 .downloadsPreview {
     width: 300px;
     display: flex;
@@ -11,11 +19,14 @@
 }
 
 .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 16px;
     background-color: #343a40;
     color: white;
-    padding: 18px;
     border: none;
-    text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
 }
@@ -44,7 +55,7 @@
 }
 
 .content {
-    padding: 18px;
+    padding: 16px;
     font-weight: normal;
     letter-spacing: 0.05rem;
     background-color: #343a40;
@@ -54,10 +65,14 @@
     }
 }
 
-a, Link {
-    text-decoration: none;
-    color: yellow;
-    &:hover {
-        color: red;
+.description {
+    display: inline-block;
+}
+
+.ratingBar {
+    display: inline;
+    position: relative;
+    img {
+        position: absolute;
     }
 }
