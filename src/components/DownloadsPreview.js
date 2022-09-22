@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import abridgeDescription from "@/common/abridgeDescription";
 
+import defaultThumbnail from "@/resources/rc2k_Image.png";
 import downloadIcon from "@/resources/download_icon.png";
 import ratingBarEmpty from "@/resources/rating_bar_empty.png";
 import ratingBarFill from "@/resources/rating_bar_fill.png";
@@ -22,7 +23,7 @@ const DownloadsPreview = (props) => {
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link to = {"./" + props.name}>
-                    <img className = {Styles.thumbnailPic} src = {props.thumbnail} alt = {props.name} title = {props.name} />
+                    <img className = {Styles.thumbnailPic} src = {props.thumbnail || defaultThumbnail} alt = {props.name} title = {props.name} />
                 </Link>
                 <a href = {props.downloadLink} target = "_blank" rel = "noreferrer" >
                     <img className = {Styles.downloadIcon} src = {downloadIcon} style = {{visibility: thumbnailHovered ? "visible" : "hidden"}} alt = "Download" title = "Download" />
