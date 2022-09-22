@@ -1,9 +1,12 @@
 import ContestPreview from "@/components/ContestPreview";
 
+import Styles from "./Index.module.css";
+
 const Contests = () => {
     return (
-        <>
-            <p>Welcome to the Contests page!</p>
+        <div id = {Styles.page}>
+            <p style = {{color: "white"}}>Welcome to the Contests page!</p>
+            <div id = {Styles.main} style = {{marginTop: "10%", gridColumn: "2/-2", display: "flex", justifyContent: "space-evenly"}}>
             <ContestPreview
                 name = "MFMI23"
                 thumbnail = ""
@@ -31,7 +34,8 @@ const Contests = () => {
                 series = "MFMI"
                 host = {["Ephemeral", "Linotrix"]}
             />
-        </>
+            </div>
+        </div>
     );
 }
 

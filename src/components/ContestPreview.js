@@ -61,19 +61,19 @@ const ContestPreview = (props) => {
                     </Link>
                 </p>
                 <hr/>
-                <p>Start date: {startDate}</p>
-                <p>End date: {endDate}</p>
-                <p>Series:&#0020;
-                    {props.series === "none" ?
-                        "none" : 
-                        <Link to = {"/series/" + props.series}>
-                            {props.series}
-                        </Link>
-                    }
-                </p>
-                <p>Hosted by:&#0020;
-                    {getHosts(props.host)}
-                </p>
+                <div className = {Styles.details}>
+                    <p>Start date: {startDate}</p>
+                    <p>End date: {endDate}</p>
+                    <p>Series:&#0020;
+                        {props.series === "none" ?
+                            "none" : 
+                            <Link to = {"/series/" + props.series}>
+                                {props.series}
+                            </Link>
+                        }
+                    </p>
+                    <p>Hosted by: {getHosts(props.host)}</p>
+                </div>
             </div>
         </div>
     );

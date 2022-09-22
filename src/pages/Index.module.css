@@ -1,4 +1,17 @@
 /* Global settings */
+@font-face {
+    font-family: "rcFont";
+    font-weight: bold;
+    font-style: normal;
+    src: url("@/resources/rcfont_bold.ttf");
+}
+@font-face {
+    font-family: "rcFont";
+    font-weight: normal;
+    font-style: normal;
+    src: url("@/resources/rcfont_normal.otf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +19,13 @@
 
 #page {
     font-family: "rcFont", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
     text-align: center;
     background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
     display: grid;
     min-height: 100vh;
     grid-template-columns: repeat(10, minmax(0, 1fr));
-}
-
-@font-face{
-    font-family: "rcFont";
-    src: url("@/resources/rcfont.ttf");
 }
 
 /* Responsive design stuff */
