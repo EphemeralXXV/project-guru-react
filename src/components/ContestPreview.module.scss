@@ -1,0 +1,68 @@
+a, Link {
+    text-decoration: none;
+    color: yellow;
+    &:hover {
+        color: red;
+    }
+}
+
+.contestPreview {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden; /* Prevent content from going outside the border */
+    font-family: "rcFont", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    border: solid 4px #343a40;
+    border-radius: 8px;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 16px;
+    background-color: #343a40;
+    color: white;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.thumbnailDiv {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    &:hover .thumbnailPic {
+        filter: brightness(80%);
+    }
+}
+
+.thumbnailPic {
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    padding: 16px;
+    font-weight: normal;
+    letter-spacing: 0.05rem;
+    background-color: #343a40;
+    p {
+        color: white;
+    }
+    hr {
+        margin: 8px 0;
+    }
+}
+
+.status {
+    text-align: center;
+}
+
+.description {
+    display: inline-block;
+    text-align: justify;
+}
