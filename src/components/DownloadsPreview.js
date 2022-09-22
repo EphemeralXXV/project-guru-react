@@ -37,23 +37,25 @@ const DownloadsPreview = (props) => {
                     </Link>
                 </p>
                 <hr/>
-                <p>Category:&#0020;
-                    <Link to = {"/category/" + props.category}>
-                        {props.category}
-                    </Link>
-                </p>
-                <p>Author:&#0020;
-                    <Link to = {"/user/" + props.author}>
-                        {props.author}
-                    </Link>
-                </p>
-                <p>Downloads: {props.downloadCount}</p>
-                <p>Rating:&#0020;
-                    <div className = {Styles.ratingBar} title = {props.rating / 10 + "/10"}>
-                        <img src = {ratingBarFill} alt = {props.rating} className = {Styles.ratingBarFill} style = {{clipPath: "inset(0px " + (100 - props.rating) + "% 0px 0px)"}} />
-                        <img src = {ratingBarEmpty} alt = {props.rating} className = {Styles.ratingBarEmpty} />
-                    </div>
-                </p>
+                <div className = {Styles.details}>
+                    <p>Category:&#0020;
+                        <Link to = {"/category/" + props.category}>
+                            {props.category}
+                        </Link>
+                    </p>
+                    <p>Author:&#0020;
+                        <Link to = {"/user/" + props.author}>
+                            {props.author}
+                        </Link>
+                    </p>
+                    <p>Downloads: {props.downloadCount}</p>
+                    <p>Rating:&#0020;
+                        <div className = {Styles.ratingBar} title = {props.rating / 10 + "/10"}>
+                            <img src = {ratingBarFill} alt = {props.rating} className = {Styles.ratingBarFill} style = {{clipPath: "inset(0px " + (100 - props.rating) + "% 0px 0px)"}} />
+                            <img src = {ratingBarEmpty} alt = {props.rating} className = {Styles.ratingBarEmpty} />
+                        </div>
+                    </p>
+                </div>
             </div>
         </div>
     );
