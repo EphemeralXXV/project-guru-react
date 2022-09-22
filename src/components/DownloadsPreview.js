@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import abridgeDescription from "@/common/abridgeDescription";
+
 import downloadIcon from "@/resources/download_icon.png";
 import ratingBarEmpty from "@/resources/rating_bar_empty.png";
 import ratingBarFill from "@/resources/rating_bar_fill.png";
@@ -11,13 +13,6 @@ const DownloadsPreview = (props) => {
     const [thumbnailHovered, setThumbnailHovered] = useState(false);
     const handleThumbnailHover = () => {
         setThumbnailHovered(prevState => !prevState);
-    }
-    const abridgeDescription = (description) => {
-        description.trim();
-        if(description.length >= 100) {
-            description = description.substring(0, 98) + "...";
-        }
-        return description; 
     }
 
     return (
@@ -40,7 +35,7 @@ const DownloadsPreview = (props) => {
                         &#0020;Read more... {/* &#0020; = whitespace */}
                     </Link>
                 </p>
-                <hr style = {{margin: "8px 0"}}/>
+                <hr/>
                 <p>Category:&#0020;
                     <Link to = {"/category/" + props.category}>
                         {props.category}
