@@ -1,0 +1,13 @@
+.tab {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 4px;
+    list-style-type: none;
+    border: solid black 1px;
+    &:hover {
+        background-color: silver;
+    }
+    &.active {
+        background-color: gray;
+    }
+}
