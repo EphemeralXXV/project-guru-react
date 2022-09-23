@@ -1,13 +1,21 @@
 .tab {
+    box-sizing: content-box;
     flex-grow: 1;
+    padding: 16px;
+    color: yellow;
+    background-color: #343a40;
     text-align: center;
-    padding: 0 4px;
     list-style-type: none;
-    border: solid black 1px;
-    &:hover {
-        background-color: silver;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover, &.active {
+        color: red;
     }
-    &.active {
-        background-color: gray;
+    &:not(:last-of-type) {
+        border-right: solid black 1px;
+    }
+    &:not(.active) {
+        filter: brightness(75%);
+        border-bottom: solid black 1px;
     }
 }

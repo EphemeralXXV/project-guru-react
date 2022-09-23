@@ -1,5 +1,10 @@
 .contestDetails {
-    border: solid black 1px;
+    margin: 0 auto; // delete later!!!
+    width: 90%;
+    overflow: hidden; /* Prevent content from going outside the border */
+    font-family: "rcFont", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    border-radius: 8px;
 }
 
 .tabs {

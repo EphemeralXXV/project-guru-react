@@ -1,0 +1,27 @@
+.contestDetailsPanel {
+    padding: 16px;
+    color: white;
+    background-color: #343a40;
+    text-align: justify;
+    border: solid 4px #343a40;
+}
+
+.head {
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+.content {
+    padding-top: 16px;
+}
+
+.details {
+    display: flex;
+    column-gap: 16px;
+    float: left;
+    padding: 0 16px 16px 0;
+}
+
+.poster, .info {
+    max-height: 480px;
+}
