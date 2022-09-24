@@ -31,6 +31,7 @@ const ContestDetailsPanel = (props) => {
                     {props.children}
                 </p>
             </div>
+            <div style = {{clear: "both", height: "0"}} />   {/* Just to clear float: left (take the floated element's height into account, so that the container doesn't collapse if <p> is shorter) */}
         </div>
     );
 }
