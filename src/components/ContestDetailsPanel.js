@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Styles from "./ContestDetailsPanel.module.scss";
 
 const ContestDetailsPanel = (props) => {
-    console.log(props.status.text)
     return (
         <div className = {Styles.contestDetailsPanel}>
             <h1 className = {Styles.head}>
