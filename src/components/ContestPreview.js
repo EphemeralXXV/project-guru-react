@@ -1,43 +1,15 @@
 import { Link } from "react-router-dom";
 
 import defaultThumbnail from "@/resources/rc2k_Image.png";
+
 import abridgeDescription from "@/common/abridgeDescription";
+import { getHosts, getContestStatus } from "@/common/predefinedContests";
 
 import Styles from "./ContestPreview.module.scss";
 
-const moment = require("moment");   // Import moment.js
+const moment = require("moment");   // Import moment.js for date manipulation
 
 const ContestPreview = (props) => {
-    const getHosts = (hosts) => {
-        return hosts.map((host, index) =>
-            <span key = {index}>
-                <Link to = {"/user/" + host}>
-                    {host}
-                </Link>
-                {index ? "" : ", "}
-            </span>
-        )
-    }
-    const getContestStatus = (startDate, endDate) => {
-        const today = new Date();
-        const [unknownStartDate, unknownEndDate] = [startDate === "TBA", endDate === "TBA"];  // Check if start date isn't announced yet (TBA)
-        if(!unknownStartDate) {
-            startDate = new Date(startDate);
-        }
-        if(!unknownEndDate) {
-            endDate = new Date(endDate);
-        }
-        // Might want to add more checks here
-        if(startDate > today || unknownStartDate) {
-            return {status: "Upcoming", color: "#00FF00"};
-        }
-        else if(endDate < today) {
-            return {status: "Finished", color: "#FF0000"};
-        }
-        else {
-            return {status: "Ongoing", color: "#FFA500"};
-        }
-    }
     const [startDate, endDate] = [moment(props.startDate, "MM/DD/YYYY", true).isValid() ? props.startDate : "TBA", moment(props.endDate, "MM/DD/YYYY", true).isValid() ? props.startDate : "TBA"];  // Soft format check, wrong format defaults to TBA
     const contestStatus = getContestStatus(startDate, endDate);
 
@@ -52,7 +24,7 @@ const ContestPreview = (props) => {
                 </Link>
             </div>
             <div className = {Styles.content}>
-                <p className = {Styles.status} style = {{color: contestStatus.color}}>{contestStatus.status}</p>
+                <p className = {Styles.status} style = {{color: contestStatus.color}}>{contestStatus.text}</p>
                 <hr/>
                 <p className = {Styles.description}>
                     {abridgeDescription(props.description)}
