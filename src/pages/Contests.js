@@ -1,4 +1,4 @@
-import ContestPreview from "@/components/ContestPreview";
+import ContestPreview from "@/components/contests/ContestPreview";
 
 import { contests } from "@/common/predefinedContests";
 

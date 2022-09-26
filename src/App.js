@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import IndexPage from "./pages/Index";
 import ForumPage from "./pages/Forum";
 import ContestsPage from "./pages/Contests";
-import ContestDetails from "./components/ContestDetails";
+import ContestDetails from "@/components/contests/ContestDetails";
 import DownloadsPage from "./pages/Downloads";
 import WikiPage from "./pages/Wiki";
 import CommunityPage from "./pages/Community";
