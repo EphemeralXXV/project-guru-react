@@ -19,13 +19,13 @@ const ContestDetailsPanel = (props) => {
                         </ContestOverview>;
     const rules =       <ContestRules>
                             {props.children} 
-                        </ContestRules>
+                        </ContestRules>;
     const itinerary =   <ContestItinerary>
                             {props.children} 
-                        </ContestItinerary>
+                        </ContestItinerary>;
     const results =     <ContestResults>
                             {props.children} 
-                        </ContestResults>
+                        </ContestResults>;
     const getContent = (tab) => {
         switch(tab) {
             case "rules":

@@ -1,0 +1,48 @@
+/* Global settings */
+@font-face {
+    font-family: "rcFont";
+    font-weight: bold;
+    font-style: normal;
+    src: url("@/resources/rcfont_bold.ttf");
+}
+@font-face {
+    font-family: "rcFont";
+    font-weight: normal;
+    font-style: normal;
+    src: url("@/resources/rcfont_normal.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    font-family: "rcFont", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
+    display: grid;
+    min-height: 100vh;
+    grid-template: 1fr 8fr 1fr / 1fr 8fr 1fr;
+}
+
+#main {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 4fr 5fr;
+    justify-content: "space-evenly";
+}
+
+/* Responsive design stuff */
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 600px) {
+}
