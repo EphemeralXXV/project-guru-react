@@ -1,8 +1,43 @@
-import { Link } from "react-router-dom";
+import ContestOverview from "./ContestOverview";
+import ContestRules from "./ContestRules";
+import ContestItinerary from "./ContestItinerary";
+import ContestResults from "./ContestResults";
 
 import Styles from "./ContestDetailsPanel.module.scss";
 
 const ContestDetailsPanel = (props) => {
+    const overview =    <ContestOverview
+                            name = {props.name}
+                            poster = {props.poster}
+                            startDate = {props.startDate}
+                            endDate = {props.endDate}
+                            status = {props.status}
+                            series = {props.series}
+                            host = {props.host}
+                        >
+                            {props.children}
+                        </ContestOverview>;
+    const rules =       <ContestRules>
+                            {props.children} 
+                        </ContestRules>
+    const itinerary =   <ContestItinerary>
+                            {props.children} 
+                        </ContestItinerary>
+    const results =     <ContestResults>
+                            {props.children} 
+                        </ContestResults>
+    const getContent = (tab) => {
+        switch(tab) {
+            case "rules":
+                return rules;
+            case "itinerary":
+                return itinerary;
+            case "results":
+                return results;
+            default:
+                return overview;
+        }
+    }
     return (
         <div className = {Styles.contestDetailsPanel}>
             <h1 className = {Styles.head}>
@@ -10,26 +45,7 @@ const ContestDetailsPanel = (props) => {
             </h1>
             <hr/>
             <div className = {Styles.content}>
-                <div className = {Styles.details}>
-                    <img className = {Styles.poster} src = {props.poster} alt = {props.name} title = {props.name} />
-                    <div className = {Styles.info}>
-                        <p className = {Styles.status} style = {{color: props.status.color}}>{props.status.text}</p>
-                        <p>Start date: {props.startDate}</p>
-                        <p>End date: {props.endDate}</p>
-                        <p>Series:&#0020;
-                            {props.series === "none" ?
-                                "none" : 
-                                <Link to = {"/series/" + props.series}>
-                                    {props.series}
-                                </Link>
-                            }
-                        </p>
-                        <p>Hosted by: {props.host}</p>
-                    </div>
-                </div>
-                <p className = {Styles.description}>
-                    {props.children}
-                </p>
+                {getContent(props.tab)}
             </div>
             <div style = {{clear: "both", height: "0"}} />   {/* Just to clear float: left (take the floated element's height into account, so that the container doesn't collapse if <p> is shorter) */}
         </div>
