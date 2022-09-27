@@ -7,7 +7,6 @@ import Styles from "./Subpage.module.css";
 const Contests = () => {
     return (
         <div id = {Styles.page}>
-            <p style = {{color: "white"}}>Welcome to the Contests page!</p>
             <div id = {Styles.main}>
                 {Object.values(contests).map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
                     return  <ContestPreview

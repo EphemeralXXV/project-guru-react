@@ -23,18 +23,17 @@
     font-style: normal;
     text-align: center;
     background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
-    display: grid;
     min-height: 100vh;
-    grid-template: 1fr 8fr 1fr / 1fr 8fr 1fr;
+    padding: 100px;
 }
 
 #main {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 4fr 5fr;
-    justify-content: "space-evenly";
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    grid-auto-flow: row;
 }
 
 /* Responsive design stuff */

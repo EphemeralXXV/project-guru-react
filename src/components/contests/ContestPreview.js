@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Truncate from "react-truncate";
 
 import defaultThumbnail from "@/resources/rc2k_Image.png";
 
@@ -16,7 +17,9 @@ const ContestPreview = (props) => {
     return (
         <div className = {Styles.contestPreview}>
             <h1 className = {Styles.head}>
-                {props.name}
+                <Truncate lines = {1} ellipsis = "..." title = {props.name}>
+                    {props.name}
+                </Truncate>
             </h1>
             <div className = {Styles.thumbnailDiv}>
                 <Link to = {"./" + props.name}>
@@ -32,8 +35,8 @@ const ContestPreview = (props) => {
                         &#0020;Read more... {/* &#0020; = whitespace */}
                     </Link>
                 </p>
-                <hr/>
                 <div className = {Styles.details}>
+                    <hr/>
                     <p>Start date: {startDate}</p>
                     <p>End date: {endDate}</p>
                     <p>Series:&#0020;
