@@ -1,4 +1,3 @@
-import { isArray } from "@craco/craco/lib/utils";
 import { Link } from "react-router-dom";
 
 // Predefined contest collection
@@ -34,8 +33,8 @@ export const contests = {
         rules: "There are no rules",
         itinerary: "Everywhere at the end of time",
         results: "Nobody wins!", 
-        startDate: "asdas",
-        endDate: "hello world",
+        startDate: "TBA",
+        endDate: "TBA",
         series: "MFMI",
         host: ["Ephemeral", "Linotrix"]
     },
@@ -150,6 +149,27 @@ export const contests = {
 }
 
 // Auxiliary functions for formatting purposes
+export const orderContests = (contestArray, option, descending) => {
+    const optionIsDate = option.slice(-4).toLowerCase() === "date" ? true : false;  // Should check the format inside the sorting function instead, but this should do the trick for now
+    const [aThenB, bThenA] = descending ? [1, -1] : [-1, 1];                        // .sort() normally returns 1 for a>b and -1 for b>a --- reverse this if opposite order is chosen
+    return contestArray.concat().sort(function(contestA, contestB) {                // .concat() makes a copy of the array instead of mutating
+        let [optionA, optionB] = [contestA[option], contestB[option]];
+        if(optionIsDate) {                                                          // Turn into Date type if optionIsDate and isn't "TBA", otherwise the comparison won't work
+            if(optionA === "TBA" && optionB === "TBA") {
+                return 0;
+            }
+            else if(optionA === "TBA") {
+                return aThenB;
+            }
+            else if(optionB === "TBA") {
+                return bThenA;
+            }
+            [optionA, optionB] = [new Date(optionA), new Date(optionB)];
+        }
+        return (optionA > optionB) ? aThenB : (optionA < optionB) ? bThenA : 0;
+    });
+}
+
 const addLinkToHosts = (hosts) => {
     return  <Link to = {"/user/" + hosts}>
                 {hosts}

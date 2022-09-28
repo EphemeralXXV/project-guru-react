@@ -1,14 +1,18 @@
 import ContestPreview from "@/components/contests/ContestPreview";
+import OrderBy from "@/components/OrderBy";
 
-import { contests } from "@/common/predefinedContests";
+import { contests, orderContests } from "@/common/predefinedContests";
 
 import Styles from "./Subpage.module.css";
 
 const Contests = () => {
+    const contestArray = Object.values(contests);
+    const orderedContestArray = orderContests(contestArray, "startDate", true);
     return (
         <div id = {Styles.page}>
+        <OrderBy />
             <div id = {Styles.main}>
-                {Object.values(contests).map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
+                {orderedContestArray.map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
                     return  <ContestPreview
                                 name = {contest.name}
                                 thumbnail = {contest.poster}
