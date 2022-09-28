@@ -1,3 +1,4 @@
+import { isArray } from "@craco/craco/lib/utils";
 import { Link } from "react-router-dom";
 
 // Predefined contest collection
@@ -48,7 +49,7 @@ export const contests = {
         startDate: "12/18/2021",
         endDate: "12/19/2021",
         series: "none",
-        host: ["Linotrix"]
+        host: "Linotrix"
     },
     Masters: {
         name: "MOBIL 1 RALLY CHAMPIONSHIP MASTERS 2021",
@@ -60,7 +61,7 @@ export const contests = {
         startDate: "02/14/2021",
         endDate: "02/14/2021",
         series: "none",
-        host: ["Linotrix"]
+        host: "Linotrix"
     },
     MFMI20: {
         name: "MFMI20",
@@ -84,7 +85,7 @@ export const contests = {
         startDate: "01/14/2020",
         endDate: "01/28/2020",
         series: "none",
-        host: ["Ephemeral"]
+        host: "Ephemeral"
     },
     Mobil1Tetrathlon: {
         name: "Mobil 1 Tetrathlon",
@@ -96,7 +97,7 @@ export const contests = {
         startDate: "02/10/2019",
         endDate: "02/17/2019",
         series: "none",
-        host: ["Ephemeral"]
+        host: "Ephemeral"
     },
     RallyMania2019: {
         name: "RallyMania 2019",
@@ -108,7 +109,7 @@ export const contests = {
         startDate: "05/03/2019",
         endDate: "05/10/2019",
         series: "none",
-        host: ["Ephemeral"]
+        host: "Ephemeral"
     },
     Mobil1Trailblazer2019: {
         name: "Mobil 1 Trailblazer 2019",
@@ -120,20 +121,47 @@ export const contests = {
         startDate: "10/27/2019",
         endDate: "11/04/2019",
         series: "none",
-        host: ["Ephemeral"]
+        host: "Ephemeral"
+    },
+    RCXX: {
+        name: "Rally Championship 20th Anniversary Invitational",
+        poster: "",
+        overview: "As this is another entry in the same series as last year's Magnetic Fields 30 Year Anniversary Invitational, it's based around the same thing. Again, it's going to be an A8 Championship playthrough with the participants fighting to score the best times amongst each other. Except, there's a twist...",
+        rules: "There are no rules",
+        itinerary: "Everywhere at the end of time",
+        results: "Nobody wins!", 
+        startDate: "07/08/2019",
+        endDate: "07/25/2019",
+        series: "MFMI",
+        host: ["Linotrix", "Ephemeral"]
+    },
+    MFMI19: {
+        name: "Magnetic Fields Memorial Invitational",
+        poster: "",
+        overview: "This contest will be a basic playthrough of the A8 Championship, but with the rivalry being between the contest participants, not between themselves individually and the bots. There will be, however, a strict schedule that everyone will have to follow in order not to be disqualified (in case of an emergency, a participant will be allowed to complete all stages of a specified day one day in advance, as long as they inform the Championship Manager (me)).",
+        rules: "There are no rules",
+        itinerary: "Everywhere at the end of time",
+        results: "Nobody wins!", 
+        startDate: "09/03/2018",
+        endDate: "09/21/2018",
+        series: "MFMI",
+        host: ["Linotrix", "Ephemeral"]
     }
 }
 
 // Auxiliary functions for formatting purposes
+const addLinkToHosts = (hosts) => {
+    return  <Link to = {"/user/" + hosts}>
+                {hosts}
+            </Link>; 
+}
 export const getHosts = (hosts) => {
-    return hosts.map((host, index) =>
+    return Array.isArray(hosts) ? hosts.map((host, index) =>    // Map elements if isArray...
         <span key = {index}>
-            <Link to = {"/user/" + host}>
-                {host}
-            </Link>
+            {addLinkToHosts(host)}
             {index ? "" : ", "}
         </span>
-    )
+    ) : addLinkToHosts(hosts);                                  // ...else return itself (String)
 }
 
 export const getContestStatus = (startDate, endDate) => {

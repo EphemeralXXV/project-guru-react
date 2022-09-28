@@ -11,7 +11,7 @@ import Styles from "./ContestPreview.module.scss";
 const moment = require("moment");   // Import moment.js for date manipulation
 
 const ContestPreview = (props) => {
-    const [startDate, endDate] = [moment(props.startDate, "MM/DD/YYYY", true).isValid() ? props.startDate : "TBA", moment(props.endDate, "MM/DD/YYYY", true).isValid() ? props.startDate : "TBA"];  // Soft format check, wrong format defaults to TBA
+    const [startDate, endDate] = [moment(props.startDate, "MM/DD/YYYY", true).isValid() ? props.startDate : "TBA", moment(props.endDate, "MM/DD/YYYY", true).isValid() ? props.endDate : "TBA"];  // Soft format check, wrong format defaults to TBA
     const contestStatus = getContestStatus(startDate, endDate);
 
     return (
