@@ -1,0 +1,33 @@
+#searchBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min-content;
+    margin: 0 auto;
+    position: relative;
+}
+
+#inputField {
+    padding: 2px 8px;
+    border-radius: 50vh;
+    font-family: "rcFont";
+    font-size: 1rem;
+}
+
+#searchIcon {
+    position: absolute;
+    right: -28px;
+    height: 26px;
+    cursor: pointer;
+}
+
+#advancedSearchButton {
+    display: inline-block;
+    font-weight: normal;
+    color: yellow;
+    font-size: 0.9rem;
+    cursor: pointer;
+    &:hover {
+        color: red;
+    }
+}

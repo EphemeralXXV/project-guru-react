@@ -14,15 +14,13 @@ const OrderBy = (props) => {
     const directionCapitalized = props.direction[0].toUpperCase() + props.direction.slice(1);
     return (
         <div id = {Styles.orderBy}>
-            <p>Order by:</p>
-            <div id = {Styles.options}>
-                <select id = {Styles.list} value = {props.option} onChange = {handleOptionChange}>
-                    <option value = "name">Name</option>
-                    <option value = "startDate">Start date</option>
-                    <option value = "endDate">End date</option>
-                </select>
-                <img id = {Styles.order} src = {orderGraphic} alt = {directionCapitalized} title = {directionCapitalized} onClick = {handleOrderChange} />
-            </div>
+            <span>Order by:</span>
+            <select id = {Styles.list} value = {props.option} onChange = {handleOptionChange}>
+                <option value = "name">Name</option>
+                <option value = "startDate">Start date</option>
+                <option value = "endDate">End date</option>
+            </select>
+            <img id = {Styles.order} src = {orderGraphic} alt = {directionCapitalized} title = {directionCapitalized} onClick = {handleOrderChange} />
         </div>
     );
 }
