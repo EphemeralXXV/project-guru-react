@@ -2,12 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: min-content;
+    width: 30vw;
     margin: 0 auto;
     position: relative;
+    & > :not(img) {
+        width: 100%;
+    }
 }
 
-#inputField {
+#simpleSearchInputField {
     padding: 2px 8px;
     border-radius: 50vh;
     font-family: "rcFont";
@@ -23,11 +26,52 @@
 
 #advancedSearchButton {
     display: inline-block;
+    padding: 8px;
     font-weight: normal;
-    color: yellow;
     font-size: 0.9rem;
+    color: yellow;
     cursor: pointer;
     &:hover {
         color: red;
     }
+}
+
+#advancedSearch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+    font-size: 0.9rem;
+    .advancedSearchOption {
+        span {
+            margin: auto 0;
+        }
+        display: grid;
+        width: 100%;
+        grid-template-columns: 3fr 4fr 3fr;
+        .advancedSearchOptionLabel {
+            grid-column: 1/2;
+            text-align: right;
+        }
+        input[type="text"] {
+            grid-column: 2/3;
+        }
+        .advancedSearchSelectables {
+            display: flex;
+            justify-content: space-around;
+            grid-column: 3/3;
+            font-size: 0.75rem;
+            font-weight: normal;
+            .advancedSearchSelectable {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+fieldset {
+    border-radius: 16px;
+    padding: 0 8px 8px 8px;
+    background-color: rgba(0, 0, 0, 0.25);
 }
