@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ContestPreview from "@/components/contests/ContestPreview";
 import OrderBy from "@/components/OrderBy";
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/searchBar/SearchBar";
 
 import { contests, orderContests } from "@/common/predefinedContests";
 
