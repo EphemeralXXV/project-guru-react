@@ -2,8 +2,9 @@ import { useState } from "react";
 
 import searchIcon from "@/resources/searchIcon.png";
 
-import Styles from "./SearchBar.module.scss";
 import SearchBarAdvanced from "./SearchBarAdvanced";
+
+import Styles from "./SearchBar.module.scss";
 
 const SearchBar = (props) => {
     const [searchInput, setSearchInput] = useState("");
@@ -15,12 +16,15 @@ const SearchBar = (props) => {
             props.onSearchChange(searchInput);
         }
     }
+    const handleAdvSearchChange = (name, startDate, endDate) => {
+        props.onAdvOptsChange([name, startDate, endDate]);
+    }
 
     return (
         <div id = {Styles.searchBar}>
             <input id = {Styles.simpleSearchInputField} placeholder = "Search..." onChange = {handleSearchChange} onKeyDown = {handleSearchSubmit}/>
             <img id = {Styles.searchIcon} src = {searchIcon} alt = "Search" title = "Search" onClick = {handleSearchSubmit} />
-            <SearchBarAdvanced />
+            <SearchBarAdvanced onAdvSearchChange = {handleAdvSearchChange} />
         </div>
     );
 }
