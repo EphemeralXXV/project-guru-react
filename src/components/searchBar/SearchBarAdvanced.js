@@ -24,15 +24,18 @@ const SearchBarAdvanced = (props) => {
     const handleAdvOptsChange = () => {
         props.onAdvSearchChange(name, startDate, endDate);
     }
+    const handleAdvOptSubmit = () => {  // "Fast-forward" submit - if user hits enter inside input
+        props.onAdvSearchChange(name, startDate, endDate);
+    }
     return (
         <>
             <p id = {Styles.advancedSearchButton} style = {fieldVisible ? {display: "none"} : {display: "inline-block"}} onClick = {handleFieldToggle}>Advanced search</p>
             <fieldset id = {fieldVisible ? Styles.advancedSearch : Styles.advancedSearchHidden} style = {fieldVisible ? {display: "block"} : {display: "none"}}>
                 <legend id = {Styles.advancedSearchButton} onClick = {handleFieldToggle}>Advanced search</legend>
                 <div id = {Styles.advancedSearchContents}>
-                    <AdvancedSearchOption name = "Name" type = "text" onAdvOptChange = {handleNameChange}/>
-                    <AdvancedSearchOption name = "Start date" type = "date" onAdvOptChange = {handleStartDateChange} />
-                    <AdvancedSearchOption name = "End date" type = "date" onAdvOptChange = {handleEndDateChange} />
+                    <AdvancedSearchOption name = "Name" type = "text" onAdvOptChange = {handleNameChange} onAdvOptSubmit = {handleAdvOptSubmit} />
+                    <AdvancedSearchOption name = "Start date" type = "date" onAdvOptChange = {handleStartDateChange} onAdvOptSubmit = {handleAdvOptSubmit} />
+                    <AdvancedSearchOption name = "End date" type = "date" onAdvOptChange = {handleEndDateChange} onAdvOptSubmit = {handleAdvOptSubmit} />
                 </div>
             <button onClick = {handleAdvOptsChange}>Search</button>
             </fieldset>

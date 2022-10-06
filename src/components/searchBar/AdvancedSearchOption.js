@@ -15,6 +15,11 @@ const AdvancedSearchOption = (props) => {
         setDelimiter(value);
         props.onAdvOptChange(searchInput, value);
     }
+    const handleAdvOptSubmit = (event) => {
+        if(event.key === "Enter") {
+            props.onAdvOptSubmit();
+        }
+    }
     const optionName = props.name.replace(                                                          // Turn the name into PascalCase (to stick to one naming convention)
         /(\w)(\w*)\s*/g,                                                                            // (\w) -> firstLetter (any word character), (\w*) -> restOfWord (any sequence of word characters), \s -> whitespaces
         (match, firstLetter, restOfWord) => firstLetter.toUpperCase() + restOfWord.toLowerCase()    // Capitalize the first letter of each word
@@ -23,7 +28,7 @@ const AdvancedSearchOption = (props) => {
     return (
         <div className = {Styles.advancedSearchOption}>
             <span className = {Styles.advancedSearchOptionLabel}>{displayedOptionName}:&#0020;</span>
-            <input type = {props.type} onChange = {handleSearchChange} style = {{color: props.type === "date" && searchInput !== "" && "black"}} />
+            <input type = {props.type} onChange = {handleSearchChange} onKeyDown = {handleAdvOptSubmit} style = {{color: props.type === "date" && searchInput !== "" && "black"}} />
             <div className = {Styles.advancedSearchSelectables}>
                 <AdvancedSearchSelectable type = {props.type} name = {optionName} value = "Exact" onDelimiterChange = {handleDelimiterChange} />
                 {props.type === "date" &&   // Date options also get Before... and After... switches, everything else is just toggled between Exact and not
