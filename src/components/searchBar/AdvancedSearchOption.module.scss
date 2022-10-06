@@ -12,6 +12,9 @@
     input[type="text"] {
         grid-column: 2/3;
     }
+    input[type="date"] {
+        color: gray;
+    }
     .advancedSearchSelectables {
         display: flex;
         justify-content: space-around;
