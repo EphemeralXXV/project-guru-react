@@ -5,6 +5,7 @@ import OrderBy from "@/components/OrderBy";
 import SearchBar from "@/components/searchBar/SearchBar";
 
 import { contests, orderContests } from "@/common/predefinedContests";
+import { filterContestsByDate, filterContestsByName } from "@/common/searchBarUtils";
 
 import Styles from "./Subpage.module.css";
 
@@ -26,29 +27,28 @@ const Contests = () => {
     const handleAdvOptsChange = (advOpts) => {
         setAdvancedSearch(true);
         setAdvancedOptions(advOpts);
-        console.log(advOpts);
     }
     const contestArray = Object.values(contests);
     const orderedContestArray = orderContests(contestArray, order.option, order.direction);
     const filteredContestArray = orderedContestArray.filter((contest) => {
         let returnValue = null; // Array.prototype.filter() requires a return statement at the very end of the arrow function, so this is a little workaround for that. If no match is found, null is returned (current contest is filtered out).
         if(advancedSearch) {
-            let name, startDate, endDate;
+            returnValue = true;
             if(advancedOptions[0].value !== "") {
-                name = advancedOptions[0].delimiter === "Exact" ? advancedOptions[0].value : advancedOptions[0].value.trim().toLowerCase();
-                return advancedOptions[0].delimiter === "Exact" ? contest.name === name : contest.name.toLowerCase().includes(name);
+                returnValue &&= filterContestsByName(contest.name, advancedOptions[0]);
             }
             if(advancedOptions[1].value !== "") {
-                startDate = advancedOptions[1].value
+                returnValue &&= filterContestsByDate(contest.startDate, advancedOptions[1]);
             }
             if(advancedOptions[2].value !== "") {
-                endDate = advancedOptions[2].value
+                returnValue &&= filterContestsByDate(contest.endDate, advancedOptions[2]);
             }
         }
         else {
-            for(const property in contest) {
+            for(const property in contest) {    // If any property of string type matches the query...
                 if(typeof contest[property] === "string" && contest[property].toLowerCase().includes(searchInput)) {
-                    returnValue = contest;
+                    returnValue = true;         // ...return the contest...
+                    break;                      // ...no need to check other properties
                 }
             }
         }

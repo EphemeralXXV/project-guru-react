@@ -29,15 +29,15 @@ const SearchBarAdvanced = (props) => {
     }
     return (
         <>
-            <p id = {Styles.advancedSearchButton} style = {fieldVisible ? {display: "none"} : {display: "inline-block"}} onClick = {handleFieldToggle}>Advanced search</p>
+            <p id = {Styles.advancedSearchToggleButton} style = {fieldVisible ? {display: "none"} : {display: "inline-block"}} onClick = {handleFieldToggle}>Advanced search</p>
             <fieldset id = {fieldVisible ? Styles.advancedSearch : Styles.advancedSearchHidden} style = {fieldVisible ? {display: "block"} : {display: "none"}}>
-                <legend id = {Styles.advancedSearchButton} onClick = {handleFieldToggle}>Advanced search</legend>
+                <legend id = {Styles.advancedSearchToggleButton} onClick = {handleFieldToggle}>Advanced search</legend>
                 <div id = {Styles.advancedSearchContents}>
                     <AdvancedSearchOption name = "Name" type = "text" onAdvOptChange = {handleNameChange} onAdvOptSubmit = {handleAdvOptSubmit} />
                     <AdvancedSearchOption name = "Start date" type = "date" onAdvOptChange = {handleStartDateChange} onAdvOptSubmit = {handleAdvOptSubmit} />
                     <AdvancedSearchOption name = "End date" type = "date" onAdvOptChange = {handleEndDateChange} onAdvOptSubmit = {handleAdvOptSubmit} />
                 </div>
-            <button onClick = {handleAdvOptsChange}>Search</button>
+            <button id = {Styles.advancedSearchSubmitButton} onClick = {handleAdvOptsChange}>Search</button> {/* Should perhaps change it to the RC2K-style button in the future */}
             </fieldset>
         </>
     );

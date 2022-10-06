@@ -5,7 +5,7 @@ fieldset {
     overflow: hidden;
 }
 
-#advancedSearchButton {
+#advancedSearchToggleButton {
     padding: 8px;
     font-weight: normal;
     font-size: 0.9rem;
@@ -14,6 +14,10 @@ fieldset {
     &:hover {
         color: red;
     }
+}
+
+#advancedSearchSubmitButton {
+    margin-top: 8px;
 }
 
 #advancedSearchContents {
