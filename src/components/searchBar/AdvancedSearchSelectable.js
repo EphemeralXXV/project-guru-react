@@ -8,7 +8,7 @@ const AdvancedSearchSelectable = (props) => {
     }
     return (
         <div className = {Styles.advancedSearchSelectable}>
-            <input type = {optionIsDate ? "radio" : "checkbox"} name = {optionName} value = {optionName + props.value} defaultChecked = {optionIsDate && props.value === "Exact"} onChange = {handleDelimiterChange}/>    {/* If date, "Exact" will be the defaultChecked radiobox, else it will be an unchecked checkbox */}
+            <input type = {optionIsDate ? "radio" : "checkbox"} name = {optionName} value = {optionName + props.value} defaultChecked = {optionIsDate && props.value === "Exact"} onChange = {handleDelimiterChange} />    {/* If date, "Exact" will be the defaultChecked radiobox, else it will be an unchecked checkbox */}
             <label htmlFor = {optionName + props.value}>{props.value}</label>
         </div>
     );

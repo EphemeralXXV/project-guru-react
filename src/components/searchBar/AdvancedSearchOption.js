@@ -28,7 +28,7 @@ const AdvancedSearchOption = (props) => {
     return (
         <div className = {Styles.advancedSearchOption}>
             <span className = {Styles.advancedSearchOptionLabel}>{displayedOptionName}:&#0020;</span>
-            <input type = {props.type} onChange = {handleSearchChange} onKeyDown = {handleAdvOptSubmit} style = {{color: props.type === "date" && searchInput !== "" && "black"}} />
+            <input type = {props.type} onChange = {handleSearchChange} onKeyDown = {handleAdvOptSubmit} style = {{color: props.type === "date" && searchInput !== "" && "black"}} min = {props.minDate} max = {props.maxDate} />
             <div className = {Styles.advancedSearchSelectables}>
                 <AdvancedSearchSelectable type = {props.type} name = {optionName} value = "Exact" onDelimiterChange = {handleDelimiterChange} />
                 {props.type === "date" &&   // Date options also get Before... and After... switches, everything else is just toggled between Exact and not
