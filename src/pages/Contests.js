@@ -60,7 +60,7 @@ const Contests = () => {
             <SearchBar onSearchChange = {handleSearchChange} onAdvOptsChange = {handleAdvOptsChange} />
             <OrderBy onOptionChange = {handleOrderOptionChange} onDirectionChange = {handleOrderDirectionChange} option = {order.option} direction = {order.direction} /> {/* Lift OrderBy's state up by passing handlers as props */}
             <div id = {Styles.main}>
-                {filteredContestArray.map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
+                {filteredContestArray.length > 0 ? filteredContestArray.map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
                         return  <ContestPreview
                                     name = {contest.name}
                                     thumbnail = {contest.poster}
@@ -72,7 +72,7 @@ const Contests = () => {
                                     key = {index}
                                 />;
                         }
-                )}
+                ) : <p style = {{gridColumn: "1/-1"}}>No contests found. Please change your search criteria or check back later.</p>}
             </div>
         </div>
     );
