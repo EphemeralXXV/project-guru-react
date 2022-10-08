@@ -1,0 +1,25 @@
+.advancedSearchOption {
+    span {
+        margin: auto 0;
+    }
+    display: grid;
+    width: 100%;
+    grid-template-columns: 3fr 4fr 3fr;
+    .advancedSearchOptionLabel {
+        grid-column: 1/2;
+        text-align: right;
+    }
+    input[type="text"] {
+        grid-column: 2/3;
+    }
+    input[type="date"] {
+        color: gray;
+    }
+    .advancedSearchSelectables {
+        display: flex;
+        justify-content: space-around;
+        grid-column: 3/3;
+        font-size: 0.75rem;
+        font-weight: normal;
+    }
+}

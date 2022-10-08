@@ -1,0 +1,16 @@
+.contestDetailsPanel {
+    padding: 16px 16px 0 16px; // Don't give bottom padding to the whole panel, instead give it to .description, to prevent unnecessary bottom padding if .description is short (.details padding will add up an result in a 32px bottom padding for the panel)
+    color: white;
+    background-color: #343a40;
+    text-align: justify;
+    border: solid 4px #343a40;
+}
+
+.head {
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+.content {
+    padding-top: 16px;
+}

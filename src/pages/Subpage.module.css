@@ -1,0 +1,48 @@
+/* Global settings */
+@font-face {
+    font-family: "rcFont";
+    font-weight: bold;
+    font-style: normal;
+    src: url("@/resources/rcfont_bold.ttf");
+}
+@font-face {
+    font-family: "rcFont";
+    font-weight: normal;
+    font-style: normal;
+    src: url("@/resources/rcfont_normal.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    font-family: "rcFont", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    background: repeating-linear-gradient(45deg, #363da7, #000841 10px);
+    min-height: 100vh;
+    padding: 100px;
+}
+
+#main {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    grid-auto-flow: row;
+}
+
+/* Responsive design stuff */
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (max-width: 992px) {
+}
+
+@media only screen and (max-width: 600px) {
+}

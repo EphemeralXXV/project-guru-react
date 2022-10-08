@@ -1,0 +1,22 @@
+#orderBy {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+}
+
+#list {
+    height: 100%;
+    display: inline-block;
+    margin: 4px;
+}
+
+#order {
+    height: 100%;
+    transform: rotateY(180deg);     // Descending by default, which is opposite of the original gear ratio graphic direction
+    cursor: pointer;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
