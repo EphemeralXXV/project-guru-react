@@ -6,7 +6,7 @@ const Downloads = () => {
     return (
         <div id = {Styles.page}>
         <p style = {{color: "white"}}>Welcome to the Downloads page!</p>
-            <div id = {Styles.main} style = {{marginTop: "10%", gridColumn: "2/-2", display: "flex", justifyContent: "space-evenly"}}>
+            <div id = {Styles.main}>
                 <DownloadsPreview
                     name = "RC2KEdit Fifth Release"
                     downloadLink = "https://mega.nz/file/UlAiWKDa#PLThVqBPFf_gzXL-WvfcYIUNkMQPaoiVKcUNUsUsA10"

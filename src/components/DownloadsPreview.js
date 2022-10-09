@@ -49,12 +49,13 @@ const DownloadsPreview = (props) => {
                         </Link>
                     </p>
                     <p>Downloads: {props.downloadCount}</p>
-                    <p>Rating:&#0020;
+                    <div className = {Styles.rating}>
+                        <p>Rating:&#0020;</p>
                         <div className = {Styles.ratingBar} title = {props.rating / 10 + "/10"}>
                             <img src = {ratingBarFill} alt = {props.rating} className = {Styles.ratingBarFill} style = {{clipPath: "inset(0px " + (100 - props.rating) + "% 0px 0px)"}} />
                             <img src = {ratingBarEmpty} alt = {props.rating} className = {Styles.ratingBarEmpty} />
                         </div>
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
