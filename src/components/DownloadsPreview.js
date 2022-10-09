@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Truncate from "react-truncate";
 
 import abridgeDescription from "@/common/abridgeDescription";
 
@@ -19,7 +20,9 @@ const DownloadsPreview = (props) => {
     return (
         <div className = {Styles.downloadsPreview}>
             <h1 className = {Styles.head}>
-                {props.name}
+                <Truncate lines = {1} ellipsis = "..." title = {props.name}>
+                    {props.name}
+                </Truncate>
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link to = {"./" + props.name}>
@@ -38,6 +41,8 @@ const DownloadsPreview = (props) => {
                 </p>
                 <hr/>
                 <div className = {Styles.details}>
+                    <p>Upload date: {props.uploadDate}</p>
+                    <p>Last modified: {props.modifiedDate}</p>
                     <p>Category:&#0020;
                         <Link to = {"/category/" + props.category}>
                             {props.category}
