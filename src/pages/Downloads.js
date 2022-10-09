@@ -1,4 +1,4 @@
-import Styles from "./Index.module.css";
+import Styles from "./Subpage.module.css";
 
 import DownloadsPreview from "@/components/DownloadsPreview";
 
