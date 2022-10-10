@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Truncate from "react-truncate";
 
+import { getAuthors } from "@/common/predefinedDownloads";
 import abridgeDescription from "@/common/abridgeDescription";
 
 import defaultThumbnail from "@/resources/rc2k_Image.png";
@@ -48,11 +49,7 @@ const DownloadsPreview = (props) => {
                             {props.category}
                         </Link>
                     </p>
-                    <p>Author:&#0020;
-                        <Link to = {"/user/" + props.author}>
-                            {props.author}
-                        </Link>
-                    </p>
+                    <p>Made by: {getAuthors(props.author)}</p>
                     <p>Downloads: {props.downloadCount}</p>
                     <div className = {Styles.rating}>
                         <p>Rating:&#0020;</p>

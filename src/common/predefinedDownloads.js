@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Predefined downloads collection
 export const downloads = {
     RC2KEdit_v5: {
@@ -44,7 +46,7 @@ export const downloads = {
         uploadDate: "02/11/2020",
         modifiedDate: "02/11/2020",
         category: "Tracks",
-        author: "Redchili385",
+        author: ["Redchili385", "Dummiesman"],
         downloadCount: "666",
         rating: 66
     },
@@ -144,4 +146,32 @@ export const downloads = {
         downloadCount: "42K",
         rating: 0
     }
+}
+
+// Auxiliary functions for formatting purposes
+export const orderDownloads = (downloadsArray, option, direction) => {
+    const descending = direction !== "ascending";                                   // Defaults to descending if not explicitly ascending
+    const optionIsDate = option.slice(-4).toLowerCase() === "date" ? true : false;  // Should check the format inside the sorting function instead, but this should do the trick for now
+    const [aThenB, bThenA] = descending ? [1, -1] : [-1, 1];                        // .sort() normally returns 1 for a>b and -1 for b>a --- reverse this if opposite order is chosen
+    return downloadsArray.concat().sort(function(downloadA, downloadB) {            // .concat() makes a copy of the array instead of mutating
+        let [optionA, optionB] = [downloadA[option], downloadB[option]];
+        if(optionIsDate) {                                                          
+            [optionA, optionB] = [new Date(optionA), new Date(optionB)];
+        }
+        return (optionA > optionB) ? aThenB : (optionA < optionB) ? bThenA : 0;
+    });
+}
+
+const addLinkToAuthors = (authors) => {
+    return  <Link to = {"/user/" + authors}>
+                {authors}
+            </Link>; 
+}
+export const getAuthors = (authors) => {
+    return Array.isArray(authors) ? authors.map((author, index) =>  // Map elements if isArray...
+        <span key = {index}>
+            {addLinkToAuthors(author)}
+            {index ? "" : ", "}
+        </span>
+    ) : addLinkToAuthors(authors);                                  // ...else return itself (String)
 }
