@@ -12,6 +12,8 @@ const Downloads = () => {
             <div id = {Styles.main}>
                 {downloadsArray.map((download, index) =>
                     <DownloadsPreview
+                        uploadDate = {download.uploadDate}
+                        modifiedDate = {download.modifiedDate}
                         name = {download.name}
                         downloadLink = {download.downloadLink}
                         thumbnail = {download.thumbnail}
