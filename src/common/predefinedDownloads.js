@@ -39,5 +39,85 @@ export const downloads = {
         author: "Redchili385",
         downloadCount: "666",
         rating: 66
+    },
+    ReversedMode_v010: {
+        name: "Rally reversed mode v0.1.0",
+        downloadLink: "https://drive.google.com/file/d/1HR38grecs6Ciqf39y6Iu8_l6QC-MpLZR/view?usp=sharing",
+        thumbnail: "",
+        description: "This is a mod that reverses the order of all stages and arcades, giving a new perspective of the game and an option for training.",
+        category: "Tracks",
+        author: "Redchili385",
+        downloadCount: "123",
+        rating: 100
+    },
+    RallyRebalancedAlpha_0031: {
+        name: "Rally Rebalanced Alpha 0.0.3.1",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/1012407548298657942/Rally_Rebalanced_Alpha_0.0.3.1.zip",
+        thumbnail: "",
+        description: "No changes except that it's Patch 6 with no-cd applied so no more worries about havin to use an iso",
+        category: "Physics mods",
+        author: "Certare",
+        downloadCount: "1",
+        rating: 86
+    },
+    TeamGoodSmileRacing: {
+        name: "Team GoodSmile Racing livery",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/1008847532421566504/Team_GoodSmile_Racing.zip",
+        thumbnail: "https://media.discordapp.net/attachments/638834861796229120/1008850504316633128/new_livery.png",
+        description: "Team GoodSmile Racing livery for 1999 Subaru Impreza WRX STi created for the needs of MFMI22.",
+        category: "Skins",
+        author: "Tribell",
+        downloadCount: "311",
+        rating: 99
+    },
+    WiraFalkenEz: {
+        name: "Proton Wira Falken livery",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/922090168922550272/Wira_Falken_ez.zip",
+        thumbnail: "https://media.discordapp.net/attachments/638834861796229120/922090168406671390/unknown.png?width=152&height=683",
+        description: "Here's one extremely easy Proton Wira livery\nModified things :\nAdded redline in the interior\nSwapped steering wheel logo to mitsubishi cause technically it's a Lancer Evo I-III\nYes Mitsubishi logo swaps\nJust few less decals and limited stuff\nIf ya wonder why there's a hole in falken on da hood then it's just a vent and decided to keep it proper\nInstallation guide :\nUnzip da file\nMake backup of original livery (TX1080-TX1087 in rc/files/b and also same files in rc/files/b/gravel)\nCopy proper files and paste them to rc/files/b and then rc/files/b/gravel\nWhy tho no gravel livery? Well the only differences bettween this and gravel thing is just different wheels so why just don't use da normal asphalt wheels everywhere if they look the same almost",
+        category: "Skins",
+        author: "Certare",
+        downloadCount: "21",
+        rating: 37
+    },
+    CorollaBrundle: {
+        name: "V-Rally 2 Corolla WRC livery",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/874652250151206932/Corolla_-_Brundle.7z",
+        thumbnail: "https://media.discordapp.net/attachments/638834861796229120/874655067532328980/porownanie.png?width=1440&height=243",
+        description: "Its time for my another mediocre texture mod! This time I recreated the infamous V-rally 2 Corolla WRC driven by former Formula One driver Martin Brundle during 1999 Rally of Great Britain",
+        category: "Skins",
+        author: "ChudyPiszczel (Krusantusz)",
+        downloadCount: "123456789",
+        rating: 39
+    },
+    LangtonStuntCourse: {
+        name: "Langton Stunt Course",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/660748215552835584/LangtonStunt.zip",
+        thumbnail: "https://media.discordapp.net/attachments/638834861796229120/660748154315997224/unknown.png?width=972&height=683",
+        description: "Langton Stunt Course\nBecause why not?\n\nExtract to rc\\srclvls to install",
+        category: "Tracks",
+        author: "Dummiesman",
+        downloadCount: "555K",
+        rating: 87
+    },
+    GlentroolFixedLighting: {
+        name: "Glentrool - fixed lighting",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/665242813796974612/Glentrool_-_fixed_lighting.zip",
+        thumbnail: "https://media.discordapp.net/attachments/638834861796229120/665242832977657866/unknown.png?width=854&height=683",
+        description: "",
+        category: "Tracks",
+        author: "Ephemeral",
+        downloadCount: "2",
+        rating: 13
+    },
+    Volvo850RWagon_v01: {
+        name: "Volvo 850R Wagon #15 Rickard Rydell v0.1",
+        downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/739398939274379334/Welsh_Sheep_Wagon_A7_v0.1_by_Gargamelowny.zip",
+        thumbnail: "",
+        description: "",
+        category: "Skins",
+        author: "Gargamelowny",
+        downloadCount: "42K",
+        rating: 0
     }
 }
