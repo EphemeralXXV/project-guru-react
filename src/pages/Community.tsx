@@ -1,4 +1,4 @@
-const Community = () => {
+const Community: FC = (): JSX.Element => {
     return (
         <>
             <p>Welcome to the Community page!</p>

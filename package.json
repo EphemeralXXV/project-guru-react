@@ -8,6 +8,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.58",
+    "@types/react-dom": "^18.2.19",
     "craco": "^0.0.3",
     "craco-alias": "^3.0.1",
     "gh-pages": "^4.0.0",
@@ -20,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-truncate": "^2.4.0",
     "sass": "^1.54.8",
+    "typescript": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
