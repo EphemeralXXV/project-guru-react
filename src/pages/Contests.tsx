@@ -63,12 +63,12 @@ const Contests = () => {
                 {filteredContestArray.length > 0 ? filteredContestArray.map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
                         return  <ContestPreview
                                     name = {contest.name}
-                                    thumbnail = {contest.poster}
+                                    thumbnail = {contest.posterURL}
                                     description = {contest.overview}
                                     startDate = {contest.startDate}
                                     endDate = {contest.endDate}
                                     series = {contest.series}
-                                    host = {contest.host}
+                                    host = {contest.hosts}
                                     key = {index}
                                 />;
                         }

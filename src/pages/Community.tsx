@@ -1,4 +1,6 @@
-const Community: FC = (): JSX.Element => {
+import * as React from "react";
+
+const Community: React.FC<{}> = () => {
     return (
         <>
             <p>Welcome to the Community page!</p>
