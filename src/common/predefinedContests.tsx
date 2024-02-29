@@ -8,8 +8,8 @@ interface Contest {
     rules: string,
     itinerary: string,
     results: string,
-    startDate: string,
-    endDate: string,
+    startDate: Date | null,
+    endDate: Date | null,
     series: string,
     hosts: string[]
 }
@@ -21,8 +21,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!",
-    startDate: "07/21/2021",
-    endDate: "08/06/2021",
+    startDate: new Date("07/21/2021"),
+    endDate: new Date("08/06/2021"),
     series: "MFMI",
     hosts: ["Ephemeral", "Linotrix"]
 }, {
@@ -32,8 +32,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!",
-    startDate: "08/08/2022",
-    endDate: "08/24/2022",
+    startDate:  new Date("08/08/2022"),
+    endDate:  new Date("08/24/2022"),
     series: "MFMI",
     hosts: ["Ephemeral", "Linotrix"]
 }, {
@@ -43,8 +43,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "TBA",
-    endDate: "TBA",
+    startDate:  null,
+    endDate:  null,
     series: "MFMI",
     hosts: ["Ephemeral", "Linotrix"]
 }, {
@@ -54,8 +54,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "12/18/2021",
-    endDate: "12/19/2021",
+    startDate:  new Date("12/18/2021"),
+    endDate:  new Date("12/19/2021"),
     series: "none",
     hosts: ["Linotrix"]
 }, {
@@ -65,8 +65,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "02/14/2021",
-    endDate: "02/14/2021",
+    startDate:  new Date("02/14/2021"),
+    endDate:  new Date("02/14/2021"),
     series: "none",
     hosts: ["Linotrix"]
 }, {
@@ -76,8 +76,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "07/15/2020",
-    endDate: "08/01/2020",
+    startDate:  new Date("07/15/2020"),
+    endDate:  new Date("08/01/2020"),
     series: "MFMI",
     hosts: ["Ephemeral", "Linotrix"]
 }, {
@@ -87,8 +87,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "01/14/2020",
-    endDate: "01/28/2020",
+    startDate:  new Date("01/14/2020"),
+    endDate:  new Date("01/28/2020"),
     series: "none",
     hosts: ["Ephemeral"]
 }, {
@@ -98,8 +98,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "02/10/2019",
-    endDate: "02/17/2019",
+    startDate:  new Date("02/10/2019"),
+    endDate:  new Date("02/17/2019"),
     series: "none",
     hosts: ["Ephemeral"]
 }, {
@@ -109,8 +109,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "05/03/2019",
-    endDate: "05/10/2019",
+    startDate:  new Date("05/03/2019"),
+    endDate:  new Date("05/10/2019"),
     series: "none",
     hosts: ["Ephemeral"]
 }, {
@@ -120,8 +120,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "10/27/2019",
-    endDate: "11/04/2019",
+    startDate:  new Date("10/27/2019"),
+    endDate:  new Date("11/04/2019"),
     series: "none",
     hosts: ["Ephemeral"]
 }, {
@@ -131,8 +131,8 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "07/08/2019",
-    endDate: "07/25/2019",
+    startDate:  new Date("07/08/2019"),
+    endDate:  new Date("07/25/2019"),
     series: "MFMI",
     hosts: ["Linotrix", "Ephemeral"]
 }, {
@@ -142,29 +142,29 @@ export const contests: Contest[] = [{
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
     results: "Nobody wins!", 
-    startDate: "09/03/2018",
-    endDate: "09/21/2018",
+    startDate:  new Date("09/03/2018"),
+    endDate:  new Date("09/21/2018"),
     series: "MFMI",
     hosts: ["Linotrix", "Ephemeral"]
 }];
 
 // Auxiliary functions for formatting purposes
-export const orderContests = (contestArray: Contest[], option: keyof Contest, direction: string): Contest[] => {
+export const orderContests = (contestArray: Contest[], option: keyof Contest, direction: "ascending" | "descending"): Contest[] => {
     const descending = direction !== "ascending";                                           // Defaults to descending if not explicitly ascending
-    const optionIsDate = option.slice(-4).toLowerCase() === "date" ? true : false;          // Should check the format inside the sorting function instead, but this should do the trick for now
+    const optionIsDate = Object.prototype.toString.call(option) === '[object Date]';
     const [aThenB, bThenA] = descending ? [1, -1] : [-1, 1];                                // .sort() normally returns 1 for a>b and -1 for b>a --- reverse this if opposite order is chosen
     return contestArray.concat().sort((contestA: Contest, contestB: Contest): number => {   // .concat() makes a copy of the array instead of mutating
         let [optionA, optionB] = [contestA[option], contestB[option]];
-        if(!optionIsDate) {                                                                 // Turn into Date type if optionIsDate and isn't "TBA", otherwise the comparison won't work
-            if(optionA === "TBA" && optionB === "TBA") {
-                return 0;
-            }
-            if(optionA === "TBA") {
-                return aThenB;
-            }
-            if(optionB === "TBA") {
-                return bThenA;
-            }
+        if(optionA == null && optionB == null) {
+            return 0;
+        }
+        if(optionA == null) {
+            return aThenB;
+        }
+        if(optionB == null) {
+            return bThenA;
+        }
+        if(optionIsDate) {                                                                 // Turn into Date type if optionIsDate and isn't null, otherwise the comparison won't work
             [optionA, optionB] = [new Date(optionA as string).toString(), new Date(optionB as string).toString()];
         }
         return (optionA > optionB) ? aThenB : (optionA < optionB) ? bThenA : 0;
@@ -185,17 +185,16 @@ export const getHosts = (hosts: string[]): React.JSX.Element[] => {
     );
 }
 
-export const getContestStatus = (startDate: string | Date, endDate: string | Date) => {
+export const getContestStatus = (startDate: Date, endDate: Date) => {
     const today = new Date();
-    const [unknownStartDate, unknownEndDate] = [startDate === "TBA", endDate === "TBA"];  // Check if start date isn't announced yet (TBA)
-    if(!unknownStartDate) {
+    if(startDate != null) {
         startDate = new Date(startDate);
     }
-    if(!unknownEndDate) {
+    if(endDate != null) {
         endDate = new Date(endDate);
     }
     // Might want to add more checks here
-    if(startDate > today || unknownStartDate) {
+    if(startDate > today || startDate == null) {
         return {text: "Upcoming", color: "#00FF00"};
     }
     if(endDate < today) {

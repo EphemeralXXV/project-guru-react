@@ -1,21 +1,26 @@
 import moment from "moment";
 
-export const filterContestsByName = (nameFound, nameSearched) => {   // Used in filtering contests by advanced search name
-    let delimiter = nameSearched.delimiter;
-    nameSearched = nameSearched.value;
-    return delimiter === "Exact" ? nameFound === nameSearched : nameFound.toLowerCase().includes(nameSearched.trim().toLowerCase());
+interface AdvancedSearchOption {
+    delimiter: string,
+    value: string
 }
 
-export const filterContestsByDate = (dateFound, dateSearched) => {   // Used in filtering contests by advanced search dates
-    let delimiter = dateSearched.delimiter;
+export const filterContestsByName = (nameFound: string, nameSearched: AdvancedSearchOption): boolean => {   // Used in filtering contests by advanced search name
+    const delimiter = nameSearched.delimiter;
+    const value = nameSearched.value;
+    return delimiter === "Exact" ? nameFound === value : nameFound.toLowerCase().includes(value.trim().toLowerCase());
+}
+
+export const filterContestsByDate = (dateFound: moment.Moment, dateSearched: AdvancedSearchOption): boolean => {   // Used in filtering contests by advanced search dates
+    const delimiter = dateSearched.delimiter;
     dateFound = moment(dateFound, "MM/DD/YYYY");    // MM/DD/YYYY is the default format used in contest objs
-    dateSearched = moment(dateSearched.value, "YYYY-MM-DD");
+    const value = moment(dateSearched.value, "YYYY-MM-DD");
     switch(delimiter) {
         case "Before":
-            return dateFound.isBefore(dateSearched);
+            return dateFound.isBefore(value);
         case "After":
-            return dateFound.isAfter(dateSearched);
+            return dateFound.isAfter(value);
         default:
-            return dateFound.isSame(dateSearched);
+            return dateFound.isSame(value);
     }
 }
