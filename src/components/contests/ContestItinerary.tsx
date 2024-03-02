@@ -1,8 +1,12 @@
-const ContestItinerary = (props) => {
+interface ContestItineraryProps {
+    children: React.ReactNode
+}
+
+const ContestItinerary: React.FC<ContestItineraryProps> = ({ children }) => {
     return (
         <div>
             <p>
-                {props.children}
+                {children}
             </p>
         </div>
     );

@@ -1,8 +1,12 @@
-const ContestRules = (props) => {
+interface ContestRulesProps {
+    children: React.ReactNode
+}
+
+const ContestRules: React.FC<ContestRulesProps> = ({ children }) => {
     return (
         <div>
             <p>
-                {props.children}
+                {children}
             </p>
         </div>
     );

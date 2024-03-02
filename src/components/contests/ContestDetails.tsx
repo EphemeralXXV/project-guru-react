@@ -22,8 +22,8 @@ const ContestDetails: React.FC<{}> = () => {
     return (
         <div className = {Styles.contestDetails}>
             <ul className = {Styles.tabs}>
-                {tabs.map((value: string, index: number): React.JSX.Element => {
-                    return <ContestDetailsTab name = {value} onTabClick = {handleTabChange} key = {index} active = {value === activeTab} />;
+                {tabs.map((tab: Tab, index: number): React.JSX.Element => {
+                    return <ContestDetailsTab tab = {tab} onTabClick = {handleTabChange} key = {index} active = {tab === activeTab} />;
                 })}
             </ul>
             <ContestDetailsPanel contest = {contest} tab = {activeTab}>

@@ -1,29 +1,44 @@
 import { Link } from "react-router-dom";
 
-import Styles from "./ContestOverview.module.scss";
+import defaultThumbnail from "@/resources/rc2k_Image.png";
 
-const ContestOverview = (props) => {
+import { Contest, getContestStatus } from "@/common/predefinedContests";
+
+import Styles from "@/components/contests/ContestOverview.module.scss";
+
+interface ContestOverviewProps {
+    contest: Contest,
+    children: React.ReactNode
+}
+
+const ContestOverview: React.FC<ContestOverviewProps> = ({ contest, children }) => {
+    const contestStatus = getContestStatus(contest.startDate, contest.endDate);
     return (
         <div className = {Styles.contestOverview}>
             <div className = {Styles.details}>
-                <img className = {Styles.poster} src = {props.poster} alt = {props.name} title = {props.name} />
+                <img
+                    className = {Styles.poster}
+                    src = {contest.posterURL || defaultThumbnail}
+                    alt = {contest.name || "Unknown contest"}
+                    title = {contest.name || "Unknown contest"}
+                />
                 <div className = {Styles.info}>
-                    <p className = {Styles.status} style = {{color: props.status.color}}>{props.status.text}</p>
-                    <p>Start date: {props.startDate}</p>
-                    <p>End date: {props.endDate}</p>
+                    <p className = {Styles.status} style = {{color: contestStatus.color}}>{contestStatus.text}</p>
+                    <p>Start date: {contest.startDate?.toString()}</p>
+                    <p>End date: {contest.endDate?.toString()}</p>
                     <p>Series:&#0020;
-                        {props.series === "none" ?
+                        {["none", null].includes(contest.series) ?
                             "none" : 
-                            <Link to = {"/series/" + props.series}>
-                                {props.series}
+                            <Link to = {"/series/" + contest.series}>
+                                {contest.series}
                             </Link>
                         }
                     </p>
-                    <p>Hosted by: {props.host}</p>
+                    <p>Hosted by: {contest.hosts?.join(",")}</p>
                 </div>
             </div>
             <p className = {Styles.description}>
-                {props.children}
+                {children}
             </p>
         </div>
     );

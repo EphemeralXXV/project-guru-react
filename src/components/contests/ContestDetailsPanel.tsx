@@ -15,15 +15,7 @@ interface ContestDetailsPanelProps {
 }
 
 const ContestDetailsPanel: React.FC<ContestDetailsPanelProps> = ({ contest, tab, children }) => {
-    const overview =    <ContestOverview
-                            name = {contest.name}
-                            poster = {contest.posterURL}
-                            startDate = {contest.startDate}
-                            endDate = {contest.endDate}
-                            status = {getContestStatus(contest.startDate, contest.endDate)}
-                            series = {contest.series}
-                            hosts = {contest.hosts}
-                        >
+    const overview =    <ContestOverview contest = {contest}>
                             {children}
                         </ContestOverview>;
     const rules =       <ContestRules>
