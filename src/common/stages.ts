@@ -1,4 +1,4 @@
-export const stageNames = [
+export const stageNames: string[] = [
     "Clocaenog Mid",
     "Penmachno South",
     "Myherin",

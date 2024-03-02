@@ -1,18 +1,35 @@
 import { Link } from "react-router-dom";
 
 // Predefined contest collection
-interface Contest {
-    name: string,
-    posterURL: string,
-    overview: string,
-    rules: string,
-    itinerary: string,
-    results: string,
+export interface Contest {
+    name: string | null,
+    posterURL: string | null,
+    overview: string | null,
+    rules: string | null,
+    itinerary: string | null,
+    results: string | null,
     startDate: Date | null,
     endDate: Date | null,
-    series: string,
-    hosts: string[]
+    series: string | null,
+    hosts: string[] | null
 }
+interface ContestStatus {
+    text: string,
+    color: string
+}
+
+export const placeholderContest: Contest = {
+    name: null,
+    posterURL: null,
+    overview: null,
+    rules: null,
+    itinerary: null,
+    results: null,
+    startDate: null,
+    endDate: null,
+    series: null,
+    hosts: null
+};
 
 export const contests: Contest[] = [{
     name: "Magnetic Fields Memorial Invitational 2021",
@@ -177,7 +194,7 @@ const addLinkToHosts = (hosts: string): React.JSX.Element => {
             </Link>; 
 }
 export const getHosts = (hosts: string[]): React.JSX.Element[] => {
-    return hosts.map((host, index) =>
+    return hosts.map((host: string, index: number) =>
         <span key = {index}>
             {addLinkToHosts(host)}
             {index ? "" : ", "}
@@ -185,7 +202,7 @@ export const getHosts = (hosts: string[]): React.JSX.Element[] => {
     );
 }
 
-export const getContestStatus = (startDate: Date, endDate: Date) => {
+export const getContestStatus = (startDate: Date | null | undefined, endDate: Date | null | undefined): ContestStatus => {
     const today = new Date();
     if(startDate != null) {
         startDate = new Date(startDate);
@@ -194,10 +211,13 @@ export const getContestStatus = (startDate: Date, endDate: Date) => {
         endDate = new Date(endDate);
     }
     // Might want to add more checks here
-    if(startDate > today || startDate == null) {
+    if(startDate != null && endDate != null && startDate > endDate) {
+        throw new Error("Start date cannot be later than start date!");
+    }
+    if(startDate == null || startDate > today) {
         return {text: "Upcoming", color: "#00FF00"};
     }
-    if(endDate < today) {
+    if(endDate != null && endDate < today) {
         return {text: "Finished", color: "#FF0000"};
     }
     return {text: "Ongoing", color: "#FFA500"};

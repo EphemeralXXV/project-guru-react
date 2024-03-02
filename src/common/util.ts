@@ -1,4 +1,4 @@
-export const toFixedLengthString = (number, desiredLength) => {
+export const toFixedLengthString = (number: number, desiredLength: number): string => {
     const numberLength = number.toString().length;
     const numberOfZeroes = desiredLength - numberLength;
     const additionalZeroes = "0".repeat(numberOfZeroes);

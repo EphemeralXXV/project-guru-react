@@ -1,33 +1,42 @@
-import ContestOverview from "./ContestOverview";
-import ContestRules from "./ContestRules";
-import ContestItinerary from "./ContestItinerary";
-import ContestResults from "./ContestResults";
+import ContestOverview from "@/components/contests/ContestOverview";
+import ContestRules from "@/components/contests/ContestRules";
+import ContestItinerary from "@/components/contests/ContestItinerary";
+import ContestResults from "@/components/contests/ContestResults";
 
-import Styles from "./ContestDetailsPanel.module.scss";
+import Styles from "@/components/contests/ContestDetailsPanel.module.scss";
 
-const ContestDetailsPanel = (props) => {
+import { Tab } from "@/components/contests/ContestDetails";
+import { Contest, getContestStatus } from "@/common/predefinedContests";
+
+interface ContestDetailsPanelProps {
+    contest: Contest,
+    tab: Tab,
+    children: React.ReactNode
+}
+
+const ContestDetailsPanel: React.FC<ContestDetailsPanelProps> = ({ contest, tab, children }) => {
     const overview =    <ContestOverview
-                            name = {props.name}
-                            poster = {props.poster}
-                            startDate = {props.startDate}
-                            endDate = {props.endDate}
-                            status = {props.status}
-                            series = {props.series}
-                            host = {props.host}
+                            name = {contest.name}
+                            poster = {contest.posterURL}
+                            startDate = {contest.startDate}
+                            endDate = {contest.endDate}
+                            status = {getContestStatus(contest.startDate, contest.endDate)}
+                            series = {contest.series}
+                            hosts = {contest.hosts}
                         >
-                            {props.children}
+                            {children}
                         </ContestOverview>;
     const rules =       <ContestRules>
-                            {props.children} 
+                            {children} 
                         </ContestRules>;
     const itinerary =   <ContestItinerary>
-                            {props.children} 
+                            {children} 
                         </ContestItinerary>;
     const results =     <ContestResults>
-                            {props.children} 
+                            {children} 
                         </ContestResults>;
-    const getContent = (tab) => {
-        switch(tab) {
+    const getContent = (tabName: Tab): React.JSX.Element => {
+        switch(tabName) {
             case "rules":
                 return rules;
             case "itinerary":
@@ -41,11 +50,11 @@ const ContestDetailsPanel = (props) => {
     return (
         <div className = {Styles.contestDetailsPanel}>
             <h1 className = {Styles.head}>
-                {props.name}
+                {contest.name}
             </h1>
             <hr/>
             <div className = {Styles.content}>
-                {getContent(props.tab)}
+                {getContent(tab)}
             </div>
             <div style = {{clear: "both", height: "0"}} />   {/* Just to clear float: left (take the floated element's height into account, so that the container doesn't collapse if <p> is shorter) */}
         </div>
