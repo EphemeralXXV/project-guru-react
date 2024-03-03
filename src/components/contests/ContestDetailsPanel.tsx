@@ -6,7 +6,7 @@ import ContestResults from "@/components/contests/ContestResults";
 import Styles from "@/components/contests/ContestDetailsPanel.module.scss";
 
 import { Tab } from "@/components/contests/ContestDetails";
-import { Contest, getContestStatus } from "@/common/predefinedContests";
+import { Contest } from "@/common/predefinedContests";
 
 interface ContestDetailsPanelProps {
     contest: Contest,

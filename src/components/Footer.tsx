@@ -1,6 +1,6 @@
-import Styles from "./Footer.module.scss";
+import Styles from "@components/Footer.module.scss";
 
-const Footer = () => {
+const Footer: React.FC<{}> = () => {
     return (
         <footer id = {Styles.footer}>
             <p>https://ephemeralxxv.github.io/ Copyright <span style = {{fontFamily: "sans-serif"}}>&copy;</span> Project Guru, 2022. All rights reserved.</p>

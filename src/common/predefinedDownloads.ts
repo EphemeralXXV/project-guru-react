@@ -1,5 +1,5 @@
 // Predefined downloads collection
-interface Download {
+export interface Download {
     name: string,
     downloadLink: string,
     thumbnailURL: string,
@@ -7,7 +7,9 @@ interface Download {
     categories: string[],
     authors: string[],
     downloadCount: number,
-    rating: number
+    rating: number,
+    uploadDate: Date,
+    modifiedDate: Date
 }
 
 export const downloads: Download[] = [{
@@ -18,7 +20,9 @@ export const downloads: Download[] = [{
     categories: ["Tools &amp; Utilies"],
     authors: ["Dummiesman"],
     downloadCount: 999999,
-    rating: 86
+    rating: 86,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Tarmac Pack v0.0.1",
     downloadLink: "https://drive.google.com/open?id=1nsaD8tzDXlsNzsKVyAQzQuJNATZ2zGaI",
@@ -27,7 +31,9 @@ export const downloads: Download[] = [{
     categories: ["Tracks"],
     authors: ["Ephemeral"],
     downloadCount: 0,
-    rating: 71
+    rating: 71,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Evo V Mitsubaru v1.1",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/996507021237039165/Evo_V_Mitsubaru_v1.1.zip",
@@ -36,7 +42,9 @@ export const downloads: Download[] = [{
     categories: ["Skins"],
     authors: ["Certare"],
     downloadCount: 69000,
-    rating: 98
+    rating: 98,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Rally Championship Nightmare Mode",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/676734706305466387/levels_NightMode.rar",
@@ -45,7 +53,9 @@ export const downloads: Download[] = [{
     categories: ["Tracks"],
     authors: ["Redchili385"],
     downloadCount: 666,
-    rating: 66
+    rating: 66,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Rally reversed mode v0.1.0",
     downloadLink: "https://drive.google.com/file/d/1HR38grecs6Ciqf39y6Iu8_l6QC-MpLZR/view?usp=sharing",
@@ -54,7 +64,9 @@ export const downloads: Download[] = [{
     categories: ["Tracks"],
     authors: ["Redchili385"],
     downloadCount: 123,
-    rating: 100
+    rating: 100,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Rally Rebalanced Alpha 0.0.3.1",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/1012407548298657942/Rally_Rebalanced_Alpha_0.0.3.1.zip",
@@ -63,7 +75,9 @@ export const downloads: Download[] = [{
     categories: ["Physics mods"],
     authors: ["Certare"],
     downloadCount: 1,
-    rating: 86
+    rating: 86,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Team GoodSmile Racing livery",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/1008847532421566504/Team_GoodSmile_Racing.zip",
@@ -72,7 +86,9 @@ export const downloads: Download[] = [{
     categories: ["Skins"],
     authors: ["Tribell"],
     downloadCount: 311,
-    rating: 99
+    rating: 99,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Proton Wira Falken livery",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/922090168922550272/Wira_Falken_ez.zip",
@@ -81,7 +97,9 @@ export const downloads: Download[] = [{
     categories: ["Skins"],
     authors: ["Certare"],
     downloadCount: 21,
-    rating: 37
+    rating: 37,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "V-Rally 2 Corolla WRC livery",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/874652250151206932/Corolla_-_Brundle.7z",
@@ -90,7 +108,9 @@ export const downloads: Download[] = [{
     categories: ["Skins"],
     authors: ["ChudyPiszczel (Krusantusz)"],
     downloadCount: 123456789,
-    rating: 39
+    rating: 39,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Langton Stunt Course",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/660748215552835584/LangtonStunt.zip",
@@ -99,7 +119,9 @@ export const downloads: Download[] = [{
     categories: ["Tracks"],
     authors: ["Dummiesman"],
     downloadCount: 555000,
-    rating: 87
+    rating: 87,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Glentrool - fixed lighting",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/665242813796974612/Glentrool_-_fixed_lighting.zip",
@@ -108,7 +130,9 @@ export const downloads: Download[] = [{
     categories: ["Tracks"],
     authors: ["Ephemeral"],
     downloadCount: 2,
-    rating: 13
+    rating: 13,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }, {
     name: "Volvo 850R Wagon #15 Rickard Rydell v0.1",
     downloadLink: "https://cdn.discordapp.com/attachments/638834861796229120/739398939274379334/Welsh_Sheep_Wagon_A7_v0.1_by_Gargamelowny.zip",
@@ -117,5 +141,7 @@ export const downloads: Download[] = [{
     categories: ["Skins"],
     authors: ["Gargamelowny"],
     downloadCount: 42000,
-    rating: 0
+    rating: 0,
+    uploadDate: new Date(),
+    modifiedDate: new Date()
 }]
