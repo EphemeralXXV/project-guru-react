@@ -2,22 +2,27 @@ import { useState } from "react";
 
 import searchIcon from "@/resources/searchIcon.png";
 
-import SearchBarAdvanced from "./SearchBarAdvanced";
+import SearchBarAdvanced from "@/components/searchBar/SearchBarAdvanced";
 
-import Styles from "./SearchBar.module.scss";
+import Styles from "@/resources/SearchBar.module.scss";
 
-const SearchBar = (props) => {
+interface SearchBarProps {
+    onSearchChange: (searchInput: string) => void,
+    onAdvOptsChange: ([name, startDate, endDate]: [string, Date, Date]) => void
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }) => {
     const [searchInput, setSearchInput] = useState("");
-    const handleSearchChange = (event) => {
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setSearchInput(event.target.value);
     }
-    const handleSearchSubmit = (event) => {
-        if(event.key === "Enter" || event.target.id === Styles.searchIcon) {
-            props.onSearchChange(searchInput);
+    const handleSearchSubmit = (event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLElement>): void => {
+        if('key' in event && event.key === "Enter" ||  (event.target as HTMLElement).id === Styles.searchIcon) {
+            onSearchChange(searchInput);
         }
     }
-    const handleAdvSearchChange = (name, startDate, endDate) => {
-        props.onAdvOptsChange([name, startDate, endDate]);
+    const handleAdvSearchChange = (name: string, startDate: Date, endDate: Date): void => {
+        onAdvOptsChange([name, startDate, endDate]);
     }
 
     return (

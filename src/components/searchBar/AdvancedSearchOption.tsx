@@ -1,37 +1,53 @@
 import { useState } from "react";
 
-import AdvancedSearchSelectable from "./AdvancedSearchSelectable";
+import AdvancedSearchSelectable from "@/components/searchBar/AdvancedSearchSelectable";
 
-import Styles from "./AdvancedSearchOption.module.scss";
+import Styles from "@/components/searchBar/AdvancedSearchOption.module.scss";
 
-const AdvancedSearchOption = (props) => {
-    const [searchInput, setSearchInput] = useState("");
-    const handleSearchChange = (event) => {
+interface AdvancedSearchOptionProps {
+    name: string,
+    type: string,
+    minDate: number,
+    maxDate: number,
+    onAdvOptChange: (searchInput: string, delimiter: string) => void,
+    onAdvOptSubmit: () => void
+}
+
+const AdvancedSearchOption: React.FC<AdvancedSearchOptionProps> = ({ name, type, minDate, maxDate, onAdvOptChange, onAdvOptSubmit }) => {
+    const [searchInput, setSearchInput] = useState<string>("");
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setSearchInput(event.target.value);
-        props.onAdvOptChange(event.target.value, delimiter);
+        onAdvOptChange(event.target.value, delimiter);
     }
     const [delimiter, setDelimiter] = useState("none");
-    const handleDelimiterChange = (value) => {
+    const handleDelimiterChange = (value: string): void => {
         setDelimiter(value);
-        props.onAdvOptChange(searchInput, value);
+        onAdvOptChange(searchInput, value);
     }
-    const handleAdvOptSubmit = (event) => {
+    const handleAdvOptSubmit = (event: React.KeyboardEvent): void => {
         if(event.key === "Enter") {
-            props.onAdvOptSubmit();
+            onAdvOptSubmit();
         }
     }
-    const optionName = props.name.replace(                                                          // Turn the name into PascalCase (to stick to one naming convention)
+    const optionName = name.replace(                                                                // Turn the name into PascalCase (to stick to one naming convention)
         /(\w)(\w*)\s*/g,                                                                            // (\w) -> firstLetter (any word character), (\w*) -> restOfWord (any sequence of word characters), \s -> whitespaces
         (match, firstLetter, restOfWord) => firstLetter.toUpperCase() + restOfWord.toLowerCase()    // Capitalize the first letter of each word
     );                                                                                              // [props.name ought to be a string of space-separated words: "Like this", "or like this"]
-    const displayedOptionName = props.name[0].toUpperCase() + props.name.slice(1).toLowerCase();    // First letter of props.name capital, the rest in lowercase
+    const displayedOptionName = name[0].toUpperCase() + name.slice(1).toLowerCase();                // First letter of props.name capital, the rest in lowercase
     return (
         <div className = {Styles.advancedSearchOption}>
             <span className = {Styles.advancedSearchOptionLabel}>{displayedOptionName}:&#0020;</span>
-            <input type = {props.type} onChange = {handleSearchChange} onKeyDown = {handleAdvOptSubmit} style = {{color: props.type === "date" && searchInput !== "" && "black"}} min = {props.minDate} max = {props.maxDate} />
+            <input
+                type = {type}
+                onChange = {handleSearchChange}
+                onKeyDown = {handleAdvOptSubmit}
+                style = {{color: (type === "date" && searchInput !== "") ? "black" : "initial"}}
+                min = {minDate}
+                max = {maxDate}
+            />
             <div className = {Styles.advancedSearchSelectables}>
-                <AdvancedSearchSelectable type = {props.type} name = {optionName} value = "Exact" onDelimiterChange = {handleDelimiterChange} />
-                {props.type === "date" &&   // Date options also get Before... and After... switches, everything else is just toggled between Exact and not
+                <AdvancedSearchSelectable type = {type} name = {optionName} value = "Exact" onDelimiterChange = {handleDelimiterChange} />
+                {type === "date" &&   // Date options also get Before... and After... switches, everything else is just toggled between Exact and not
                     <>
                         <AdvancedSearchSelectable type = "date" name = {optionName} value = "Before" onDelimiterChange = {handleDelimiterChange} />
                         <AdvancedSearchSelectable type = "date" name = {optionName} value = "After" onDelimiterChange = {handleDelimiterChange} />
