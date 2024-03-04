@@ -1,9 +1,13 @@
-import Styles from './Table.module.scss';
+import Styles from '@/components/Table.module.scss';
 
-const Table = (props) => {
+interface TableProps {
+    children: React.ReactNode
+}
+
+const Table: React.FC<TableProps> = ({ children }) => {
     return (
         <table className = {Styles.table}>
-            {props.children}
+            {children}
         </table>
     );
 }

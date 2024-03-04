@@ -1,5 +1,3 @@
-import * as React from "react";
-
 const Community: React.FC<{}> = () => {
     return (
         <>

@@ -1,21 +1,33 @@
 import orderGraphic from "@/resources/gearRatio5.png";
 
-import Styles from "./OrderBy.module.scss";
+import Styles from "@/components/OrderBy.module.scss";
 
-const OrderBy = (props) => {
-    const handleOptionChange = (event) => {
-        props.onOptionChange(event.target.value);
+enum Direction {
+    "ASC" = "ascending",
+    "DESC" = "descending"
+}
+
+interface OrderByProps {
+    direction: Direction,
+    option: string,
+    onOptionChange: (value: string) => void,
+    onDirectionChange: (direction: Direction) => void
+}
+
+const OrderBy: React.FC<OrderByProps> = ({ direction, option, onOptionChange, onDirectionChange }) => {
+    const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+        onOptionChange(event.target.value);
     }
-    const handleOrderChange = (event) => {
-        let descending = props.direction === "descending";
-        props.onDirectionChange(descending ? "ascending" : "descending");
-        event.target.style.transform = `rotateY(${180*!descending}deg)`;
+    const handleOrderChange = (event: React.MouseEvent<HTMLElement>): void => {
+        let descending = direction === "descending";
+        onDirectionChange(descending ? Direction.DESC : Direction.ASC);
+        (event.target as HTMLElement).style.transform = `rotateY(${180*(descending ? 0 : 1)}deg)`;
     }
-    const directionCapitalized = props.direction[0].toUpperCase() + props.direction.slice(1);
+    const directionCapitalized = direction[0].toUpperCase() + direction.slice(1);
     return (
         <div id = {Styles.orderBy}>
             <span>Order by:</span>
-            <select id = {Styles.list} value = {props.option} onChange = {handleOptionChange}>
+            <select id = {Styles.list} value = {option} onChange = {handleOptionChange}>
                 <option value = "name">Name</option>
                 <option value = "startDate">Start date</option>
                 <option value = "endDate">End date</option>
