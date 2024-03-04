@@ -18,8 +18,8 @@ interface DownloadsPreviewProps {
 }
 
 const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
-    const [thumbnailHovered, setThumbnailHovered] = useState(false);
-    const handleThumbnailHover = () => {
+    const [thumbnailHovered, setThumbnailHovered] = useState<boolean>(false);
+    const handleThumbnailHover = (): void => {
         setThumbnailHovered(prevState => !prevState);
     }
     const mapLinks = (arrayProperty: string[], propertyName: string): React.JSX.Element[] => {

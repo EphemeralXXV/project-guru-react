@@ -7,8 +7,8 @@ import Styles from "@/components/searchBar/AdvancedSearchOption.module.scss";
 interface AdvancedSearchOptionProps {
     name: string,
     type: string,
-    minDate: number,
-    maxDate: number,
+    minDate?: Date,
+    maxDate?: Date,
     onAdvOptChange: (searchInput: string, delimiter: string) => void,
     onAdvOptSubmit: () => void
 }
@@ -19,7 +19,7 @@ const AdvancedSearchOption: React.FC<AdvancedSearchOptionProps> = ({ name, type,
         setSearchInput(event.target.value);
         onAdvOptChange(event.target.value, delimiter);
     }
-    const [delimiter, setDelimiter] = useState("none");
+    const [delimiter, setDelimiter] = useState<string>("none");
     const handleDelimiterChange = (value: string): void => {
         setDelimiter(value);
         onAdvOptChange(searchInput, value);
@@ -42,8 +42,8 @@ const AdvancedSearchOption: React.FC<AdvancedSearchOptionProps> = ({ name, type,
                 onChange = {handleSearchChange}
                 onKeyDown = {handleAdvOptSubmit}
                 style = {{color: (type === "date" && searchInput !== "") ? "black" : "initial"}}
-                min = {minDate}
-                max = {maxDate}
+                min = {minDate?.toString()}
+                max = {maxDate?.toString()}
             />
             <div className = {Styles.advancedSearchSelectables}>
                 <AdvancedSearchSelectable type = {type} name = {optionName} value = "Exact" onDelimiterChange = {handleDelimiterChange} />
