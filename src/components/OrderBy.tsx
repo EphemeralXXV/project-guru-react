@@ -1,22 +1,24 @@
 import orderGraphic from "@/resources/gearRatio5.png";
 
+import { Contest } from "@/common/predefinedContests";
+
 import Styles from "@/components/OrderBy.module.scss";
 
-enum Direction {
+export enum Direction {
     "ASC" = "ascending",
     "DESC" = "descending"
 }
 
 interface OrderByProps {
     direction: Direction,
-    option: string,
-    onOptionChange: (value: string) => void,
+    option: keyof Contest,
+    onOptionChange: (value: keyof Contest) => void,
     onDirectionChange: (direction: Direction) => void
 }
 
 const OrderBy: React.FC<OrderByProps> = ({ direction, option, onOptionChange, onDirectionChange }) => {
     const handleOptionChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-        onOptionChange(event.target.value);
+        onOptionChange(event.target.value as keyof Contest);
     }
     const handleOrderChange = (event: React.MouseEvent<HTMLElement>): void => {
         let descending = direction === "descending";

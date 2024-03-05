@@ -3,25 +3,22 @@ import { useState } from "react";
 import AdvancedSearchOption from "@/components/searchBar/AdvancedSearchOption";
 
 import Styles from "@/components/searchBar/SearchBarAdvanced.module.scss";
+import { AdvancedSearchOption as AdvancedSearchOptionType } from "@/common/searchBarUtils";
 
 interface SearchBarAdvancedProps {
-    onAdvSearchChange: (name: string, startDate: Date, endDate: Date) => void
+    onAdvSearchChange: (advOpts: AdvancedSearchOptionType[]) => void
 }
-interface advOptState {
-    value: any,
-    delimiter: string
-}
-interface nameState extends advOptState {
+interface AdvancedSearchName extends AdvancedSearchOptionType {
     value: string
 }
-interface dateState extends advOptState {
+interface AdvancedSearchDate extends AdvancedSearchOptionType {
     value: Date
 }
 
 const SearchBarAdvanced: React.FC<SearchBarAdvancedProps> = ({ onAdvSearchChange }) => {
-    const [name, setName] = useState<nameState>({value: "", delimiter: "none"});
-    const [startDate, setStartDate] = useState<dateState>({value: new Date(), delimiter: "Exact"});
-    const [endDate, setEndDate] = useState<dateState>({value: new Date(), delimiter: "Exact"});
+    const [name, setName] = useState<AdvancedSearchName>({value: "", delimiter: "none"});
+    const [startDate, setStartDate] = useState<AdvancedSearchDate>({value: new Date(), delimiter: "Exact"});
+    const [endDate, setEndDate] = useState<AdvancedSearchDate>({value: new Date(), delimiter: "Exact"});
     const [fieldVisible, setFieldVisible] = useState<boolean>(false);
     const handleNameChange = (val: string, del: string): void => {
         setName({value: val, delimiter: del});
@@ -36,10 +33,10 @@ const SearchBarAdvanced: React.FC<SearchBarAdvancedProps> = ({ onAdvSearchChange
         setFieldVisible(prevState => !prevState);
     }
     const handleAdvOptsChange = (): void => {
-        onAdvSearchChange(name.value, startDate.value, endDate.value);
+        onAdvSearchChange([name, startDate, endDate]);
     }
     const handleAdvOptSubmit = (): void => {  // "Fast-forward" submit - if user hits enter inside input
-        onAdvSearchChange(name.value, startDate.value, endDate.value);
+        onAdvSearchChange([name, startDate, endDate]);
     }
     return (
         <>

@@ -3,12 +3,13 @@ import { useState } from "react";
 import searchIcon from "@/resources/searchIcon.png";
 
 import SearchBarAdvanced from "@/components/searchBar/SearchBarAdvanced";
+import { AdvancedSearchOption } from "@/common/searchBarUtils";
 
 import Styles from "@/resources/SearchBar.module.scss";
 
 interface SearchBarProps {
     onSearchChange: (searchInput: string) => void,
-    onAdvOptsChange: ([name, startDate, endDate]: [string, Date, Date]) => void
+    onAdvOptsChange: (advOpts: AdvancedSearchOption[]) => void
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }) => {
@@ -21,8 +22,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }
             onSearchChange(searchInput);
         }
     }
-    const handleAdvSearchChange = (name: string, startDate: Date, endDate: Date): void => {
-        onAdvOptsChange([name, startDate, endDate]);
+    const handleAdvSearchChange = (advOpts: AdvancedSearchOption[]): void => {
+        onAdvOptsChange(advOpts);
     }
 
     return (

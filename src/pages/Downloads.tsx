@@ -2,9 +2,9 @@ import { downloads } from "@/common/predefinedDownloads";
 
 import DownloadsPreview from "@/components/DownloadsPreview";
 
-import Styles from "./Subpage.module.css";
+import Styles from "@/pages/Subpage.module.scss";
 
-const Downloads = () => {
+const Downloads: React.FC<{}> = () => {
     const downloadsArray = Object.values(downloads);
     return (
         <div id = {Styles.page}>
@@ -12,14 +12,7 @@ const Downloads = () => {
             <div id = {Styles.main}>
                 {downloadsArray.map((download, index) =>
                     <DownloadsPreview
-                        name = {download.name}
-                        downloadLink = {download.downloadLink}
-                        thumbnail = {download.thumbnail}
-                        description = {download.description}
-                        category = {download.category}
-                        author = {download.author}
-                        downloadCount = {download.downloadCount}
-                        rating = {download.rating}
+                        item = {download}
                         key = {index}
                     />
                 )}

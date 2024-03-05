@@ -53,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.11",
     "@types/react-truncate": "^2.3.7"
   }
 }

@@ -9,7 +9,7 @@ import navRightHovered from "@/resources/navrighthover.png";
 import Styles from "@/components/MenuItem.module.scss";
 
 interface MenuItemProps {
-    redirectURL: string,
+    redirectURL?: string,
     name: string,
     imgURL: string
 }
