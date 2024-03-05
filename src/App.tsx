@@ -12,7 +12,7 @@ import StagesPage from "@/pages/Stages";
 
 import "@/App.css";
 
-const App = () => {
+const App: React.FC<{}> = () => {
   return (
     <Routes>
       <Route path = "/" element = {<IndexPage />} />
