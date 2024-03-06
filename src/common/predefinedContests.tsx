@@ -33,7 +33,7 @@ export const placeholderContest: Contest = {
 
 export const contests: Contest[] = [{
     name: "Magnetic Fields Memorial Invitational 2021",
-    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/845239594152886292/flyer.png",
+    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/845239594152886292/flyer.png?ex=65f41c37&is=65e1a737&hm=f847cc8deaa897269e3ee22b7813a1ace93234b934822f0bd7dd5b2631f246d8&",
     overview: "The 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\nThe 4th(!) edition of the well-known, community's first, main, and the biggest event is just ahead of us! The general event rules are familiar to most, if not to all of us. We may have some people participating for the first time, so we will repeat 'the basics'.\n\n",
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
@@ -44,7 +44,7 @@ export const contests: Contest[] = [{
     hosts: ["Ephemeral", "Linotrix"]
 }, {
     name: "MFMI22",
-    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/983975697007640596/mfmi22.png",
+    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/1005958566148059207/4_mfmi22.png?ex=65f767eb&is=65e4f2eb&hm=54d607b3956a07910a9cf286ddcf6dfa7bf19bf6c9440f689bc78bc31cf4e96b&",
     overview: "First of all: Hello there and welcome to the Milestone, 5th edition of the community's main and biggest event: Magnetic Fields Memorial Invitational 2022.",
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
@@ -66,7 +66,7 @@ export const contests: Contest[] = [{
     hosts: ["Ephemeral", "Linotrix"]
 }, {
     name: "The Frosty Chase",
-    posterURL: "https://cdn.discordapp.com/attachments/199990758089031680/899748906949283880/tfc.png",
+    posterURL: "https://cdn.discordapp.com/attachments/199990758089031680/899748906949283880/tfc.png?ex=65f89d77&is=65e62877&hm=2f8a797524dd3d3855d45f0c08e889fc5f8acff37a318f9ded81d32621184c4b&",
     overview: "The time has come! Here you can see who will be taking part in the final community event of this year!\nGiven that bono, my entire midfield [of the community] is gone - 8 of us is a decently-nice number - in my opinion!\nI will assign us the contest role and I will inform/remind you about some things related to the event later today!",
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
@@ -77,7 +77,7 @@ export const contests: Contest[] = [{
     hosts: ["Linotrix"]
 }, {
     name: "MOBIL 1 RALLY CHAMPIONSHIP MASTERS 2021",
-    posterURL: "https://cdn.discordapp.com/attachments/790641444431462401/799324436985675786/header.png",
+    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/788826641304518686/IMG-20201216-WA0003.jpg?ex=65fb230e&is=65e8ae0e&hm=35c895f1e8ba8635a3748b0a284478b88840ad9020139bcf62f20722d47e70a6&",
     overview: "The first ever Mobil 1 Rally Championship Masters edition!\n\nThe Event is based on the real life FIA Hillclimb Masters event which is held every two (2) years, so should be the case here as well. It is very unique, nothing similar has been held yet in the game! The Event regulations are very similar to the Hillclimb Masters one, but not literally the same.",
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",
@@ -132,7 +132,7 @@ export const contests: Contest[] = [{
     hosts: ["Ephemeral"]
 }, {
     name: "Mobil 1 Trailblazer 2019",
-    posterURL: "https://media.discordapp.net/attachments/419267523070918656/637774966535880705/Logo.jpg?width=1438&height=683",
+    posterURL: "https://cdn.discordapp.com/attachments/419267523070918656/637774966535880705/Logo.jpg?ex=65f618b9&is=65e3a3b9&hm=e319110ef0377a766ebe28604379f8dbb4e404529fda4caa2a848f4ba0818425&",
     overview: "Mobil 1 Trailblazer 2019  is a unique singles contest, which aside from driving abilities, requires planning skills and knowledge as well! Here are all the details you need to know about the Trailblazer:",
     rules: "There are no rules",
     itinerary: "Everywhere at the end of time",

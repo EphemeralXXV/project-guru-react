@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { Link } from "react-router-dom";
 import Truncate from "react-truncate";
 
@@ -24,12 +24,12 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
     }
     const mapLinks = (arrayProperty: string[], propertyName: string): React.JSX.Element[] => {
         return arrayProperty.map((item, index) => (
-            <>
-                <Link to = {`/${propertyName}/${item}`} key = {index}>
+            <Fragment key = {index}>
+                <Link to = {`/${propertyName}/${item}`}>
                     {item}
                 </Link>
                 {index === arrayProperty.length ? "" : ", "}
-            </>
+            </Fragment>
         ))
     }
 
