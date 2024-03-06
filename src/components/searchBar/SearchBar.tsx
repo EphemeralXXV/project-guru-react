@@ -5,7 +5,7 @@ import searchIcon from "@/resources/searchIcon.png";
 import SearchBarAdvanced from "@/components/searchBar/SearchBarAdvanced";
 import { AdvancedSearchOption } from "@/common/searchBarUtils";
 
-import Styles from "@/resources/SearchBar.module.scss";
+import Styles from "@/components/searchBar/SearchBar.module.scss";
 
 interface SearchBarProps {
     onSearchChange: (searchInput: string) => void,
@@ -18,7 +18,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }
         setSearchInput(event.target.value);
     }
     const handleSearchSubmit = (event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLElement>): void => {
-        if('key' in event && event.key === "Enter" ||  (event.target as HTMLElement).id === Styles.searchIcon) {
+        if(('key' in event && event.key === "Enter") || (event.target as HTMLElement).id === Styles.searchIcon) {
             onSearchChange(searchInput);
         }
     }

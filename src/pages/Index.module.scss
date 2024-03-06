@@ -3,13 +3,13 @@
     font-family: "rcFont";
     font-weight: bold;
     font-style: normal;
-    src: url("@/resources/rcfont_bold.ttf");
+    src: url("/resources/rcfont_bold.ttf");
 }
 @font-face {
     font-family: "rcFont";
     font-weight: normal;
     font-style: normal;
-    src: url("@/resources/rcfont_normal.otf");
+    src: url("/resources/rcfont_normal.otf");
 }
 
 * {
