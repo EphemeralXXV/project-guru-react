@@ -197,7 +197,7 @@ export const getHosts = (hosts: string[]): React.JSX.Element[] => {
     return hosts.map((host: string, index: number) =>
         <span key = {index}>
             {addLinkToHosts(host)}
-            {index ? "" : ", "}
+            {index === (hosts.length - 1) ? "" : ", "}
         </span>
     );
 }
