@@ -14,7 +14,7 @@ interface ContestPreviewProps {
 }
 
 const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
-    const [startDate, endDate] = [moment(contest.startDate, "MM/DD/YYYY", true).isValid() ? contest.startDate : "TBA", moment(contest.endDate, "MM/DD/YYYY", true).isValid() ? contest.endDate : "TBA"];  // Soft format check, wrong format defaults to TBA
+    const [startDate, endDate] = [moment(contest.startDate, "MM/DD/YYYY", true).isValid() ? contest.startDate : null, moment(contest.endDate, "MM/DD/YYYY", true).isValid() ? contest.endDate : null];  // Soft format check, wrong format defaults to TBA
     const contestStatus = getContestStatus(startDate as Date, endDate as Date);
 
     return (
@@ -45,8 +45,8 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                 </p>
                 <div className = {Styles.details}>
                     <hr/>
-                    <p>Start date: {startDate?.toString()}</p>
-                    <p>End date: {endDate?.toString()}</p>
+                    <p>Start date: {startDate?.toString() || "TBA"}</p>
+                    <p>End date: {endDate?.toString() || "TBA"}</p>
                     <p>Series:&#0020;
                         {["none", null].includes(contest.series) ?
                             "none" : 
