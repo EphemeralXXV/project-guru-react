@@ -45,17 +45,26 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                 </p>
                 <div className = {Styles.details}>
                     <hr/>
-                    <p>Start date: {startDate?.toString() || "TBA"}</p>
-                    <p>End date: {endDate?.toString() || "TBA"}</p>
-                    <p>Series:&#0020;
-                        {["none", null].includes(contest.series) ?
-                            "none" : 
-                            <Link to = {"/series/" + contest.series}>
-                                {contest.series}
-                            </Link>
-                        }
+                    <p className = {Styles.detail}>
+                        <span className = {Styles.detailKey}>Start date:</span>
+                        <span className = {Styles.detailValue}>{startDate?.toString() || "TBA"}</span>
                     </p>
-                    <p>Hosted by: {getHosts(contest.hosts || [])}</p>
+                    <p className = {Styles.detail}>
+                        <span className = {Styles.detailKey}>End date:</span>
+                        <span className = {Styles.detailValue}>{endDate?.toString() || "TBA"}</span>
+                    </p>
+                    <p className = {Styles.detail}>
+                        <span className = {Styles.detailKey}>Series:</span>
+                        <span className = {Styles.detailValue}>
+                            {["none", null].includes(contest.series) ?
+                                "none" : 
+                                <Link to = {"/series/" + contest.series}>
+                                    {contest.series}
+                                </Link>
+                            }
+                        </span>
+                    </p>
+                    <p className = {Styles.detail}>Hosted by: {getHosts(contest.hosts || [])}</p>
                 </div>
             </div>
         </div>
