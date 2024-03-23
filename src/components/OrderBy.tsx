@@ -13,7 +13,7 @@ interface OrderByProps {
     direction: Direction,
     option: keyof Contest,
     onOptionChange: (value: keyof Contest) => void,
-    onDirectionChange: (direction: Direction) => void
+    onDirectionChange: (targetDirection: Direction) => void
 }
 
 const OrderBy: React.FC<OrderByProps> = ({ direction, option, onOptionChange, onDirectionChange }) => {
@@ -22,7 +22,7 @@ const OrderBy: React.FC<OrderByProps> = ({ direction, option, onOptionChange, on
     }
     const handleOrderChange = (event: React.MouseEvent<HTMLElement>): void => {
         let descending = direction === "descending";
-        onDirectionChange(descending ? Direction.DESC : Direction.ASC);
+        onDirectionChange(descending ? Direction.ASC : Direction.DESC);
         (event.target as HTMLElement).style.transform = `rotateY(${180*(descending ? 0 : 1)}deg)`;
     }
     const directionCapitalized = direction[0].toUpperCase() + direction.slice(1);

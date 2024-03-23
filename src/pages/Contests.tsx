@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ContestPreview from "@/components/contests/ContestPreview";
 import OrderBy, { Direction } from "@/components/OrderBy";
@@ -19,8 +19,8 @@ const Contests: React.FC<{}> = () => {
     const handleOrderOptionChange = (opt: keyof Contest): void => {
         setOrder(prevState => ({...prevState, option: opt}));
     }
-    const handleOrderDirectionChange = (dir: Direction): void => {
-        setOrder(prevState => ({...prevState, direction: dir}));
+    const handleOrderDirectionChange = (targetDir: Direction): void => {
+        setOrder(prevState => ({...prevState, direction: targetDir}));
     }
     const [advancedSearch, setAdvancedSearch] = useState<boolean>(false);
     const [advancedOptions, setAdvancedOptions] = useState<AdvancedSearchOption[]>([]);
@@ -66,7 +66,7 @@ const Contests: React.FC<{}> = () => {
             <SearchBar onSearchChange = {handleSearchChange} onAdvOptsChange = {handleAdvOptsChange} />
             <OrderBy onOptionChange = {handleOrderOptionChange} onDirectionChange = {handleOrderDirectionChange} option = {order.option} direction = {order.direction} /> {/* Lift OrderBy's state up by passing handlers as props */}
             <div id = {Styles.main}>
-                {filteredContestArray.length > 0 ? filteredContestArray.map((contest, index) => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
+                {filteredContestArray.length > 0 ? filteredContestArray.map((contest: Contest, index: number): JSX.Element => {   // Mapping values, because keys are sub-objects (contests), values are their actual sets of properties
                         return  <ContestPreview
                                     contest = {contest}
                                     key = {index}
