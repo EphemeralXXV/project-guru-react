@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import defaultThumbnail from "@/resources/rc2k_Image.png";
 
 import { Contest, getContestStatus } from "@/common/predefinedContests";
+import { toLocaleDateStringParams } from "@/common/util";
 
 import Styles from "@/components/contests/ContestOverview.module.scss";
 
@@ -24,8 +25,8 @@ const ContestOverview: React.FC<ContestOverviewProps> = ({ contest, children }) 
                 />
                 <div className = {Styles.info}>
                     <p className = {Styles.status} style = {{color: contestStatus.color}}>{contestStatus.text}</p>
-                    <p>Start date: {contest.startDate?.toString()}</p>
-                    <p>End date: {contest.endDate?.toString()}</p>
+                    <p>Start date: {contest.startDate?.toLocaleDateString(...toLocaleDateStringParams)}</p>
+                    <p>End date: {contest.endDate?.toLocaleDateString(...toLocaleDateStringParams)}</p>
                     <p>Series:&#0020;
                         {["none", null].includes(contest.series) ?
                             "none" : 

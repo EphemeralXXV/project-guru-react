@@ -12,6 +12,7 @@ import ratingBarFill from "@/resources/rating_bar_fill.png";
 import Styles from "@/components/DownloadsPreview.module.scss";
 
 import { Download } from "@/common/predefinedDownloads";
+import { toLocaleDateStringParams } from "@/common/util";
 
 interface DownloadsPreviewProps {
     item: Download
@@ -63,8 +64,8 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
                 </p>
                 <hr/>
                 <div className = {Styles.details}>
-                    <p>Upload date: {item.uploadDate.toString()}</p>
-                    <p>Last modified: {item.modifiedDate.toString()}</p>
+                    <p>Upload date: {item.uploadDate.toLocaleDateString(...toLocaleDateStringParams)}</p>
+                    <p>Last modified: {item.modifiedDate.toLocaleDateString(...toLocaleDateStringParams)}</p>
                     <p>Categories: {mapLinks(item.categories, "category")}</p>
                     <p>Author(s): {mapLinks(item.authors, "user")}</p>
                     <p>Downloads: {item.downloadCount}</p>

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import Truncate from "react-truncate";
-import moment from "moment";   // Import moment.js for date manipulation
 
 import defaultThumbnail from "@/resources/rc2k_Image.png";
 
 import abridgeDescription from "@/common/abridgeDescription";
 import { getHosts, getContestStatus, Contest } from "@/common/predefinedContests";
+import { toLocaleDateStringParams } from "@/common/util";
 
 import Styles from "@/components/contests/ContestPreview.module.scss";
 
@@ -14,7 +14,9 @@ interface ContestPreviewProps {
 }
 
 const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
-    const [startDate, endDate] = [moment(contest.startDate, "MM/DD/YYYY", true).isValid() ? contest.startDate : null, moment(contest.endDate, "MM/DD/YYYY", true).isValid() ? contest.endDate : null];  // Soft format check, wrong format defaults to TBA
+    // const startDate = moment(contest.startDate, "MM/DD/YYYY", true).isValid() ? contest.startDate : null
+    // const endDate = moment(contest.endDate, "MM/DD/YYYY", true).isValid() ? contest.endDate : null;  // Soft format check, wrong format defaults to TBA
+    const [startDate, endDate] = [contest.startDate, contest.endDate]
     const contestStatus = getContestStatus(startDate as Date, endDate as Date);
 
     return (
@@ -47,11 +49,11 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                     <hr/>
                     <p className = {Styles.detail}>
                         <span className = {Styles.detailKey}>Start date:</span>
-                        <span className = {Styles.detailValue}>{startDate?.toString() || "TBA"}</span>
+                        <span className = {Styles.detailValue}>{startDate?.toLocaleDateString(...toLocaleDateStringParams) || "TBA"}</span>
                     </p>
                     <p className = {Styles.detail}>
                         <span className = {Styles.detailKey}>End date:</span>
-                        <span className = {Styles.detailValue}>{endDate?.toString() || "TBA"}</span>
+                        <span className = {Styles.detailValue}>{endDate?.toLocaleDateString(...toLocaleDateStringParams) || "TBA"}</span>
                     </p>
                     <p className = {Styles.detail}>
                         <span className = {Styles.detailKey}>Series:</span>

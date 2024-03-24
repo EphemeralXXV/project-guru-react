@@ -9,3 +9,5 @@ export const toFixedLengthString = (number: number, desiredLength: number): stri
         return "-" + additionalZeroes + Math.abs(number);
     }
 }
+
+export const toLocaleDateStringParams = ["en-US", {year: "numeric", month: "short", day: "2-digit"}] as const;
