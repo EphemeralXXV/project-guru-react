@@ -1,0 +1,21 @@
+.tab {
+    box-sizing: content-box;
+    flex-grow: 1;
+    padding: 16px;
+    color: yellow;
+    background-color: #343a40;
+    text-align: center;
+    list-style-type: none;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover, &.active {
+        color: red;
+    }
+    &:not(:last-of-type) {
+        border-right: solid black 1px;
+    }
+    &:not(.active) {
+        filter: brightness(75%);
+        border-bottom: solid black 1px;
+    }
+}

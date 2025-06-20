@@ -1,0 +1,29 @@
+fieldset {
+    border-radius: 16px;
+    padding: 0 8px 8px 8px;
+    background-color: rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+#advancedSearchToggleButton {
+    padding: 8px;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: yellow;
+    cursor: pointer;
+    &:hover {
+        color: red;
+    }
+}
+
+#advancedSearchSubmitButton {
+    margin-top: 8px;
+}
+
+#advancedSearchContents {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+    font-size: 0.9rem;
+}

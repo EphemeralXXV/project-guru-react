@@ -1,0 +1,49 @@
+.collapsible {
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden; /* Prevent content from going outside the border */
+}
+
+.headCollapsed, .headExpanded {
+    background-color: #343a40;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.headExpanded, .headCollapsed:hover {
+    background-color: #242a30;
+}
+
+.content {
+    transition: all 0.2s ease;
+    background-color: white;
+    p {
+        text-align: justify;
+        color: black;
+    }
+}
+
+.headCollapsed, .headExpanded {
+    &:after {
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+}
+
+.headCollapsed:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+}
+
+.headExpanded:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}

@@ -1,0 +1,25 @@
+#searchBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30vw;
+    margin: 0 auto;
+    position: relative;
+    & > :not(img, p) {
+        width: 100%;
+    }
+}
+
+#simpleSearchInputField {
+    padding: 2px 8px;
+    border-radius: 50vh;
+    font-family: "rcFont";
+    font-size: 1rem;
+}
+
+#searchIcon {
+    position: absolute;
+    right: -28px;
+    height: 26px;
+    cursor: pointer;
+}
