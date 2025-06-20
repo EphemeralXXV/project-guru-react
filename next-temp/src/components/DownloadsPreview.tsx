@@ -42,12 +42,12 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link to = {"./" + item.name}>
-                    <img className = {Styles.thumbnailPic} src = {item.thumbnailURL || defaultThumbnail} alt = {item.name} title = {item.name} />
+                    <img className = {Styles.thumbnailPic} src = {item.thumbnailURL || defaultThumbnail.src} alt = {item.name} title = {item.name} />
                 </Link>
                 <a href = {item.downloadLink} target = "_blank" rel = "noreferrer" >
                     <img
                         className = {Styles.downloadIcon}
-                        src = {downloadIcon}
+                        src = {downloadIcon.src}
                         style = {{visibility: thumbnailHovered ? "visible" : "hidden"}}
                         alt = "Download"
                         title = "Download"
@@ -72,12 +72,12 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
                         <p>Rating:&#0020;</p>
                         <div className = {Styles.ratingBar} title = {item.rating / 10 + "/10"}>
                             <img
-                                src = {ratingBarFill}
+                                src = {ratingBarFill.src}
                                 alt = {item.rating.toString()}
                                 className = {Styles.ratingBarFill}
                                 style = {{clipPath: "inset(0px " + (100 - item.rating) + "% 0px 0px)"}}
                             />
-                            <img src = {ratingBarEmpty} alt = {item.rating.toString()} className = {Styles.ratingBarEmpty} />
+                            <img src = {ratingBarEmpty.src} alt = {item.rating.toString()} className = {Styles.ratingBarEmpty} />
                         </div>
                     </div>
                 </div>

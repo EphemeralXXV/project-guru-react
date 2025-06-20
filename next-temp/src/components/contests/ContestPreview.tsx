@@ -28,7 +28,7 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                 <Link to = {"./" + contest.name}>
                     <img
                         className = {Styles.thumbnailPic}
-                        src = {contest.posterURL || defaultThumbnail}
+                        src = {contest.posterURL || defaultThumbnail.src}
                         alt = {contest.name || "Unknown contest"}
                         title = {contest.name || "Unknown contest"}
                     />

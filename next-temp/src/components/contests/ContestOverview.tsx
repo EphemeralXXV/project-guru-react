@@ -18,7 +18,7 @@ const ContestOverview: React.FC<ContestOverviewProps> = ({ contest, children }) 
             <div className = {Styles.details}>
                 <img
                     className = {Styles.poster}
-                    src = {contest.posterURL || defaultThumbnail}
+                    src = {contest.posterURL || defaultThumbnail.src}
                     alt = {contest.name || "Unknown contest"}
                     title = {contest.name || "Unknown contest"}
                 />

@@ -29,11 +29,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ redirectURL, name, imgURL }) => {
             </Link>
     }
     const content = <>
-        <img className = {Styles.leftArrow} src = {buttonHovered ? navLeftHovered : navLeft} alt = "Left arrow" />
+        <img className = {Styles.leftArrow} src = {buttonHovered ? navLeftHovered.src : navLeft.src} alt = "Left arrow" />
         <span className = {Styles.buttonCenter} id = {Styles[`${name.toLowerCase()}Button`]} style = {buttonHovered ? {color: "red"} : {color: "yellow"}}>
             {name}
         </span>
-        <img className = {Styles.rightArrow} src = {buttonHovered ? navRightHovered : navRight} alt = "Right arrow" />
+        <img className = {Styles.rightArrow} src = {buttonHovered ? navRightHovered.src : navRight.src} alt = "Right arrow" />
     </>;
 
     return (

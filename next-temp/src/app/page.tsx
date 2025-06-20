@@ -45,12 +45,12 @@ const IndexPage: React.FC<{}> = () => {
             <div id = {Styles.page}>    
                 <Navbar />
                 <div id = {Styles.menuContainer}> {/*Container for the whole menu dashboard*/}
-                    <MenuItem name = "Forum" imgURL = {spinningComputers} redirectURL = {"https://rc2000.forumotion.com/"} />
-                    <MenuItem name = "Contests" imgURL = {spinningArcade} />
-                    <MenuItem name = "Downloads" imgURL = {spinningFloppy} />
-                    <MenuItem name = "Wiki" imgURL = {spinningSign} />
-                    <MenuItem name = "Community" imgURL = {spinningKey} />
-                    <MenuItem name = "Misc" imgURL = {spinningCone} />
+                    <MenuItem name = "Forum" imgURL = {spinningComputers.src} redirectURL = {"https://rc2000.forumotion.com/"} />
+                    <MenuItem name = "Contests" imgURL = {spinningArcade.src} />
+                    <MenuItem name = "Downloads" imgURL = {spinningFloppy.src} />
+                    <MenuItem name = "Wiki" imgURL = {spinningSign.src} />
+                    <MenuItem name = "Community" imgURL = {spinningKey.src} />
+                    <MenuItem name = "Misc" imgURL = {spinningCone.src} />
                 </div>
                 <Footer />
             </div>

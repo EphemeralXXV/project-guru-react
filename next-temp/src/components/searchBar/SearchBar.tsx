@@ -29,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }
     return (
         <div id = {Styles.searchBar}>
             <input id = {Styles.simpleSearchInputField} placeholder = "Search..." onChange = {handleSearchChange} onKeyDown = {handleSearchSubmit}/>
-            <img id = {Styles.searchIcon} src = {searchIcon} alt = "Search" title = "Search" onClick = {handleSearchSubmit} />
+            <img id = {Styles.searchIcon} src = {searchIcon.src} alt = "Search" title = "Search" onClick = {handleSearchSubmit} />
             <SearchBarAdvanced onAdvSearchChange = {handleAdvSearchChange} />
         </div>
     );
