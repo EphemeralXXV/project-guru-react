@@ -8,13 +8,19 @@
         height: 270px;
         max-width: 90%;
         max-height: 90%;
+        vertical-align: middle;
     }
+}
+
+.menuButton img {
+    vertical-align: middle;
 }
 
 .buttonCenter {
     display: inline-block;
     vertical-align: middle;
     height: 29px;
+    line-height: 1.5;
     background-image: url("../resources/navmid.png");
     background-size: contain;
     text-decoration: none;

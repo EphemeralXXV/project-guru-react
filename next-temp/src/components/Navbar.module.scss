@@ -39,4 +39,23 @@
     overflow: hidden;
     transition: max-height 0.2s ease;
     background: white;
+    p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+        line-height: 1.5;
+        &:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+    }
+    input {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
 }
