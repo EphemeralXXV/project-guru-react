@@ -1,11 +1,3 @@
-a, Link {
-    text-decoration: none;
-    color: yellow;
-    &:hover {
-        color: red;
-    }
-}
-
 .downloadsPreview {
     grid-column: span 1;
     display: flex;
@@ -17,6 +9,14 @@ a, Link {
     font-size: 0.75rem;
     border: solid 4px #343a40;
     border-radius: 8px;
+
+    a, Link {
+        text-decoration: none;
+        color: yellow;
+        &:hover {
+            color: red;
+        }
+    }
 }
 
 .head {

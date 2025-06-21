@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Wiki: React.FC<{}> = () => {
     return (
         <>
-            <Link to = "/stages">Stages</Link>
+            <Link href = "/stages">Stages</Link>
         </>
     );
 }

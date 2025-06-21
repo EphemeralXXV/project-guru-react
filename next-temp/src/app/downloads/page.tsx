@@ -2,7 +2,7 @@ import { downloads } from "@/common/predefinedDownloads";
 
 import DownloadsPreview from "@/components/DownloadsPreview";
 
-import Styles from "@/pages/Subpage.module.scss";
+import Styles from "@/app/Subpage.module.scss";
 
 const Downloads: React.FC<{}> = () => {
     const downloadsArray = Object.values(downloads);

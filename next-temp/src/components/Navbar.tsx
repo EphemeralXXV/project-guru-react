@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import Styles from "@/components/Navbar.module.scss";
 
@@ -15,7 +17,7 @@ const Navbar: React.FC<{}> = () => {
                 <p>Sign in</p>
                 <p>Username: <input type = "text" /></p>
                 <p>Password: <input type = "password" /></p>
-                <Link to = "/">Sign in</Link>
+                <Link href = "/">Sign in</Link>
             </div>  
             <div id = {Styles.overlay} style = {{display: navbarOpen ?  "block" : "none"}} onClick = {handleNavbarToggle} /> 
         </div>

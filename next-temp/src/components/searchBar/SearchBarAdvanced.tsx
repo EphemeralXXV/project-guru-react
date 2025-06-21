@@ -39,7 +39,7 @@ const SearchBarAdvanced: React.FC<SearchBarAdvancedProps> = ({ onAdvSearchChange
         onAdvSearchChange([name, startDate, endDate]);
     }
     return (
-        <>
+        <div className = {Styles.searchBarAdvanced}>
             <p id = {Styles.advancedSearchToggleButton} style = {{display: fieldVisible ? "none" : "inline-block"}} onClick = {handleFieldToggle}>Advanced search</p>
             <fieldset id = {fieldVisible ? Styles.advancedSearch : Styles.advancedSearchHidden} style = {{display: fieldVisible ? "block" : "none"}}>
                 <legend id = {Styles.advancedSearchToggleButton} onClick = {handleFieldToggle}>Advanced search</legend>
@@ -50,7 +50,7 @@ const SearchBarAdvanced: React.FC<SearchBarAdvancedProps> = ({ onAdvSearchChange
                 </div>
                 <button id = {Styles.advancedSearchSubmitButton} onClick = {handleAdvOptsChange}>Search</button> {/* Should perhaps change it to the RC2K-style button in the future */}
             </fieldset>
-        </>
+        </div>
     );
 }
 

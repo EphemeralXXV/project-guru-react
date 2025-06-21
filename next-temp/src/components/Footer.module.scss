@@ -1,29 +1,29 @@
 @media only screen and (min-width: 1280px) {
-    footer {
+    #footer {
         font-size: 1.5vh;
     }
 }
 
 @media only screen and (max-width: 1280px) {
-    footer {
+    #footer {
         font-size: 80%;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    footer {
+    #footer {
         font-size: 65%;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    footer {
+    #footer {
         font-size: min(60%, 0.5rem);
     }
 }
 
 @media only screen and (max-width: 420px) {
-    footer {
+    #footer {
         font-size: min(50%, 0.44rem);
     }
 }

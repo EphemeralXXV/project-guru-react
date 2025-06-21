@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, Fragment } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Truncate from "react-truncate";
 
 import abridgeDescription from "@/common/abridgeDescription";
@@ -25,7 +27,7 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
     const mapLinks = (arrayProperty: string[], propertyName: string): React.JSX.Element[] => {
         return arrayProperty.map((item, index) => (
             <Fragment key = {index}>
-                <Link to = {`/${propertyName}/${item}`}>
+                <Link href = {`/${propertyName}/${item}`}>
                     {item}
                 </Link>
                 {index === arrayProperty.length ? "" : ", "}
@@ -36,12 +38,13 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
     return (
         <div className = {Styles.downloadsPreview}>
             <h1 className = {Styles.head}>
-                <Truncate lines = {1} ellipsis = "..." title = {item.name}>
+                {/* Needs a proper fix */}
+                {/* <Truncate lines = {1} ellipsis = "..." title = {item.name}>
                     {item.name}
-                </Truncate>
+                </Truncate> */}
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
-                <Link to = {"./" + item.name}>
+                <Link href = {"./" + item.name}>
                     <img className = {Styles.thumbnailPic} src = {item.thumbnailURL || defaultThumbnail.src} alt = {item.name} title = {item.name} />
                 </Link>
                 <a href = {item.downloadLink} target = "_blank" rel = "noreferrer" >
@@ -57,7 +60,7 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
             <div className = {Styles.content}>
                 <p className = {Styles.description}>
                     {abridgeDescription(item.description)}
-                    <Link to = {"./" + item.name} style = {{display: "inline-block", float: "right", lineHeight: "1.5"}}>
+                    <Link href = {"./" + item.name} style = {{display: "inline-block", float: "right", lineHeight: "1.5"}}>
                         &#0020;Read more... {/* &#0020; = whitespace */}
                     </Link>
                 </p>

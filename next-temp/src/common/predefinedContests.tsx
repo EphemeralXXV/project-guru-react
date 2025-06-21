@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 // Predefined contest collection
 export interface Contest {
@@ -189,7 +189,7 @@ export const orderContests = (contestArray: Contest[], option: keyof Contest, di
 }
 
 const addLinkToHosts = (hosts: string): React.JSX.Element => {
-    return  <Link to = {"/user/" + hosts}>
+    return  <Link href = {"/user/" + hosts}>
                 {hosts}
             </Link>; 
 }

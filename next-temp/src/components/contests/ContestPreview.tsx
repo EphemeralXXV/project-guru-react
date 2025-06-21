@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Truncate from "react-truncate";
 import moment from "moment";   // Import moment.js for date manipulation
 
@@ -20,12 +20,13 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
     return (
         <div className = {Styles.contestPreview}>
             <h1 className = {Styles.head}>
-                <Truncate lines = {1} ellipsis = "..." title = {contest.name || "Unknown contest"}>
-                    {contest.name}
-                </Truncate>
+                {/* Needs a proper fix */}
+                {/* <Truncate lines = {1} ellipsis = "..." title = {contest?.name || "Unknown contest"}>
+                    {contest?.name || "Unknown contest"}
+                </Truncate> */}
             </h1>
             <div className = {Styles.thumbnailDiv}>
-                <Link to = {"./" + contest.name}>
+                <Link href = {"./" + contest.name}>
                     <img
                         className = {Styles.thumbnailPic}
                         src = {contest.posterURL || defaultThumbnail.src}
@@ -39,7 +40,7 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                 <hr/>
                 <p className = {Styles.description}>
                     {abridgeDescription(contest.overview || "No description available.")}
-                    <Link to = {"./" + contest.name} style = {{display: "inline-block", float: "right", lineHeight: "1.5"}}>
+                    <Link href = {"./" + contest.name} style = {{display: "inline-block", float: "right", lineHeight: "1.5"}}>
                         &#0020;Read more... {/* &#0020; = whitespace */}
                     </Link>
                 </p>
@@ -58,7 +59,7 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                         <span className = {Styles.detailValue}>
                             {["none", null].includes(contest.series) ?
                                 "none" : 
-                                <Link to = {"/series/" + contest.series}>
+                                <Link href = {"/series/" + contest.series}>
                                     {contest.series}
                                 </Link>
                             }

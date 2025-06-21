@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 import spinningComputers from "@/resources/spinningComputers.gif";
 import spinningArcade from "@/resources/spinningArcade.gif";
@@ -11,12 +11,12 @@ import MenuItem from "@/components/MenuItem";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import Styles from "@/pages/Index.module.scss";
+import Styles from "@/app/Index.module.scss";
 
 const IndexPage: React.FC<{}> = () => {
     return (
         <>            
-            <Helmet>
+            <Head>
                 <meta charSet = "UTF-8" />
                 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
                 <title>Index</title>
@@ -41,7 +41,7 @@ const IndexPage: React.FC<{}> = () => {
                     integrity = "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
                     crossOrigin = "anonymous"
                 />
-            </Helmet>
+            </Head>
             <div id = {Styles.page}>    
                 <Navbar />
                 <div id = {Styles.menuContainer}> {/*Container for the whole menu dashboard*/}

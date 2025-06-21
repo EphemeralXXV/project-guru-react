@@ -1,10 +1,12 @@
+"use client";
+
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 import { toFixedLengthString } from "@/common/util";
 import { stageNames } from "@/common/stages";
 
-import Styles from "@/pages/Stages.module.scss";
+import Styles from "@/app/stages/Stages.module.scss";
 
 const getStageContainer = (stageNumber: number): React.JSX.Element => {
     const stagesImagePath = "resources/Stages/Images";
@@ -35,11 +37,11 @@ const StagesPage: React.FC<{}> = () => {
 
     return (
         <>            
-            <Helmet>
+            <Head>
                 <meta charSet = "UTF-8" />
                 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
                 <title>Stages</title>
-            </Helmet>
+            </Head>
             <div id = {Styles.page}>    
                 <div id = {Styles.stagesContainer}>
                     {stagesDiv}

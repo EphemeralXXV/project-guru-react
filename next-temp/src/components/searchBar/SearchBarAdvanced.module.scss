@@ -1,9 +1,12 @@
-fieldset {
-    border-radius: 16px;
-    padding: 0 8px 8px 8px;
-    background-color: rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+.searchBarAdvanced {
+    fieldset {
+        border-radius: 16px;
+        padding: 0 8px 8px 8px;
+        background-color: rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+    }
 }
+
 
 #advancedSearchToggleButton {
     padding: 8px;

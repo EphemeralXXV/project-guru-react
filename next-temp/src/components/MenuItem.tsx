@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import { useState } from "react";
 
 import navLeft from "@/resources/navleft.png";
@@ -24,7 +26,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ redirectURL, name, imgURL }) => {
             <a href = {redirectURL}>
                 {content}
             </a> :
-            <Link to = {`${name.toLowerCase()}`}>
+            <Link href = {`${name.toLowerCase()}`}>
                 {content}
             </Link>
     }

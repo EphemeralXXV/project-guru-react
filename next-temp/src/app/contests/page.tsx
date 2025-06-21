@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 import ContestPreview from "@/components/contests/ContestPreview";
@@ -7,7 +9,7 @@ import SearchBar from "@/components/searchBar/SearchBar";
 import { Contest, contests, orderContests } from "@/common/predefinedContests";
 import { AdvancedSearchOption, filterContestsByDate, filterContestsByName } from "@/common/searchBarUtils";
 
-import Styles from "@/pages/Subpage.module.scss";
+import Styles from "@/app/Subpage.module.scss";
 
 interface orderState {
     option: keyof Contest,
