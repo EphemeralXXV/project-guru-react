@@ -38,10 +38,9 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
     return (
         <div className = {Styles.downloadsPreview}>
             <h1 className = {Styles.head}>
-                {/* Needs a proper fix */}
-                {/* <Truncate lines = {1} ellipsis = "..." title = {item.name}>
-                    {item.name}
-                </Truncate> */}
+                <span title = {item.name || "Unknown resource"}>
+                    {item.name || "Unknown resource"}
+                </span>
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link href = {"./" + item.name}>

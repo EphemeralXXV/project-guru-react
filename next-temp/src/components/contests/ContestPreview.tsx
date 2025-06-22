@@ -20,10 +20,9 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
     return (
         <div className = {Styles.contestPreview}>
             <h1 className = {Styles.head}>
-                {/* Needs a proper fix */}
-                {/* <Truncate lines = {1} ellipsis = "..." title = {contest?.name || "Unknown contest"}>
-                    {contest?.name || "Unknown contest"}
-                </Truncate> */}
+                <span title = {contest.name || "Unknown contest"}>
+                    {contest.name || "Unknown contest"}
+                </span>
             </h1>
             <div className = {Styles.thumbnailDiv}>
                 <Link href = {"./" + contest.name}>
