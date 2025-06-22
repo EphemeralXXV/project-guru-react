@@ -1,5 +1,3 @@
-import orderGraphic from "@/resources/gearRatio5.png";
-
 import { Contest } from "@/common/predefinedContests";
 
 import Styles from "@/components/OrderBy.module.scss";
@@ -34,7 +32,7 @@ const OrderBy: React.FC<OrderByProps> = ({ direction, option, onOptionChange, on
                 <option value = "startDate">Start date</option>
                 <option value = "endDate">End date</option>
             </select>
-            <img id = {Styles.order} src = {orderGraphic.src} alt = {directionCapitalized} title = {directionCapitalized} onClick = {handleOrderChange} />
+            <img id = {Styles.order} src = "/static/images/gearRatio5.png" alt = {directionCapitalized} title = {directionCapitalized} onClick = {handleOrderChange} />
         </div>
     );
 }

@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import searchIcon from "@/resources/searchIcon.png";
-
 import SearchBarAdvanced from "@/components/searchBar/SearchBarAdvanced";
 import { AdvancedSearchOption } from "@/common/searchBarUtils";
 
@@ -29,7 +27,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearchChange, onAdvOptsChange }
     return (
         <div id = {Styles.searchBar}>
             <input id = {Styles.simpleSearchInputField} placeholder = "Search..." onChange = {handleSearchChange} onKeyDown = {handleSearchSubmit}/>
-            <img id = {Styles.searchIcon} src = {searchIcon.src} alt = "Search" title = "Search" onClick = {handleSearchSubmit} />
+            <img id = {Styles.searchIcon} src = "/static/images/searchIcon.png" alt = "Search" title = "Search" onClick = {handleSearchSubmit} />
             <SearchBarAdvanced onAdvSearchChange = {handleAdvSearchChange} />
         </div>
     );

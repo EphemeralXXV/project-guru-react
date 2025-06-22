@@ -3,11 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import navLeft from "@/resources/navleft.png";
-import navRight from "@/resources/navright.png";
-import navLeftHovered from "@/resources/navlefthover.png";
-import navRightHovered from "@/resources/navrighthover.png";
-
 import Styles from "@/components/MenuItem.module.scss";
 
 interface MenuItemProps {
@@ -31,11 +26,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ redirectURL, name, imgURL }) => {
             </Link>
     }
     const content = <>
-        <img className = {Styles.leftArrow} src = {buttonHovered ? navLeftHovered.src : navLeft.src} alt = "Left arrow" />
+        <img className = {Styles.leftArrow} src = {buttonHovered ? "/static/images/navlefthover.png" : "/static/images/navleft.png"} alt = "Left arrow" />
         <span className = {Styles.buttonCenter} id = {Styles[`${name.toLowerCase()}Button`]} style = {buttonHovered ? {color: "red"} : {color: "yellow"}}>
             {name}
         </span>
-        <img className = {Styles.rightArrow} src = {buttonHovered ? navRightHovered.src : navRight.src} alt = "Right arrow" />
+        <img className = {Styles.rightArrow} src = {buttonHovered ? "/static/images/navrighthover.png" : "/static/images/navright.png"} alt = "Right arrow" />
     </>;
 
     return (

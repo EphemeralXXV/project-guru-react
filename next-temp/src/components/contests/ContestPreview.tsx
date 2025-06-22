@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Truncate from "react-truncate";
 import moment from "moment";   // Import moment.js for date manipulation
-
-import defaultThumbnail from "@/resources/rc2k_Image.png";
 
 import abridgeDescription from "@/common/abridgeDescription";
 import { getHosts, getContestStatus, Contest } from "@/common/predefinedContests";
@@ -28,7 +25,7 @@ const ContestPreview: React.FC<ContestPreviewProps> = ({ contest }) => {
                 <Link href = {"./" + contest.name}>
                     <img
                         className = {Styles.thumbnailPic}
-                        src = {contest.posterURL || defaultThumbnail.src}
+                        src = {contest.posterURL || "/static/images/rc2k_Image.png" /* Default thumbnail */}
                         alt = {contest.name || "Unknown contest"}
                         title = {contest.name || "Unknown contest"}
                     />

@@ -2,14 +2,8 @@
 
 import { useState, Fragment } from "react";
 import Link from "next/link";
-import Truncate from "react-truncate";
 
 import abridgeDescription from "@/common/abridgeDescription";
-
-import defaultThumbnail from "@/resources/rc2k_Image.png";
-import downloadIcon from "@/resources/download_icon.png";
-import ratingBarEmpty from "@/resources/rating_bar_empty.png";
-import ratingBarFill from "@/resources/rating_bar_fill.png";
 
 import Styles from "@/components/DownloadsPreview.module.scss";
 
@@ -44,12 +38,17 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
             </h1>
             <div className = {Styles.thumbnailDiv} onMouseOver = {handleThumbnailHover} onMouseOut = {handleThumbnailHover}>
                 <Link href = {"./" + item.name}>
-                    <img className = {Styles.thumbnailPic} src = {item.thumbnailURL || defaultThumbnail.src} alt = {item.name} title = {item.name} />
+                    <img
+                        className = {Styles.thumbnailPic}
+                        src = {item.thumbnailURL || "/static/images/rc2k_Image.png" /* Default thumbnail */}
+                        alt = {item.name}
+                        title = {item.name}
+                    />
                 </Link>
                 <a href = {item.downloadLink} target = "_blank" rel = "noreferrer" >
                     <img
                         className = {Styles.downloadIcon}
-                        src = {downloadIcon.src}
+                        src = "/static/images/download_icon.png"
                         style = {{visibility: thumbnailHovered ? "visible" : "hidden"}}
                         alt = "Download"
                         title = "Download"
@@ -74,12 +73,12 @@ const DownloadsPreview: React.FC<DownloadsPreviewProps> = ({ item }) => {
                         <p>Rating:&#0020;</p>
                         <div className = {Styles.ratingBar} title = {item.rating / 10 + "/10"}>
                             <img
-                                src = {ratingBarFill.src}
+                                src = "/static/images/rating_bar_fill.png"
                                 alt = {item.rating.toString()}
                                 className = {Styles.ratingBarFill}
                                 style = {{clipPath: "inset(0px " + (100 - item.rating) + "% 0px 0px)"}}
                             />
-                            <img src = {ratingBarEmpty.src} alt = {item.rating.toString()} className = {Styles.ratingBarEmpty} />
+                            <img src = "/static/images/rating_bar_empty.png" alt = {item.rating.toString()} className = {Styles.ratingBarEmpty} />
                         </div>
                     </div>
                 </div>

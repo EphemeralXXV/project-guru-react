@@ -1,10 +1,3 @@
-import spinningComputers from "@/resources/spinningComputers.gif";
-import spinningArcade from "@/resources/spinningArcade.gif";
-import spinningFloppy from "@/resources/spinningFloppy.gif";
-import spinningSign from "@/resources/spinningSign.gif";
-import spinningKey from "@/resources/spinningKey.gif";
-import spinningCone from "@/resources/spinningCone.gif";
-
 import MenuItem from "@/components/MenuItem";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -17,12 +10,12 @@ const IndexPage: React.FC<{}> = () => {
             <div id = {Styles.page}>    
                 <Navbar />
                 <div id = {Styles.menuContainer}> {/*Container for the whole menu dashboard*/}
-                    <MenuItem name = "Forum" imgURL = {spinningComputers.src} redirectURL = {"https://rc2000.forumotion.com/"} />
-                    <MenuItem name = "Contests" imgURL = {spinningArcade.src} />
-                    <MenuItem name = "Downloads" imgURL = {spinningFloppy.src} />
-                    <MenuItem name = "Wiki" imgURL = {spinningSign.src} />
-                    <MenuItem name = "Community" imgURL = {spinningKey.src} />
-                    <MenuItem name = "Misc" imgURL = {spinningCone.src} />
+                    <MenuItem name = "Forum" imgURL = "/static/images/spinningComputers.gif" redirectURL = {"https://rc2000.forumotion.com/"} />
+                    <MenuItem name = "Contests" imgURL = "/static/images/spinningArcade.gif" />
+                    <MenuItem name = "Downloads" imgURL = "/static/images/spinningFloppy.gif" />
+                    <MenuItem name = "Wiki" imgURL = "/static/images/spinningSign.gif" />
+                    <MenuItem name = "Community" imgURL = "/static/images/spinningKey.gif" />
+                    <MenuItem name = "Misc" imgURL = "/static/images/spinningCone.gif" />
                 </div>
                 <Footer />
             </div>

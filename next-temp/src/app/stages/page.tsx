@@ -9,13 +9,13 @@ import { stageNames } from "@/common/stages";
 import Styles from "@/app/stages/Stages.module.scss";
 
 const getStageContainer = (stageNumber: number): React.JSX.Element => {
-    const stagesImagePath = "resources/Stages/Images";
+    const stagesImagePath = "/static/images/stages";
     const imagePath = stagesImagePath + `/stage${toFixedLengthString(stageNumber, 2)}.png`;
     const stageName = stageNames[stageNumber];
     const stageContainer =
         <>
             <span className = {Styles.stageName}>{stageName}</span>
-            <img src = {require("@/" + imagePath)} alt = {stageName} className = {Styles.stageImage}/>
+            <img src = {imagePath} alt = {stageName} className = {Styles.stageImage}/>
         </>;
     return stageContainer;
 }

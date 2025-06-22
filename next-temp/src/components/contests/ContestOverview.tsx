@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import defaultThumbnail from "@/resources/rc2k_Image.png";
-
 import { Contest, getContestStatus } from "@/common/predefinedContests";
 
 import Styles from "@/components/contests/ContestOverview.module.scss";
@@ -18,7 +16,7 @@ const ContestOverview: React.FC<ContestOverviewProps> = ({ contest, children }) 
             <div className = {Styles.details}>
                 <img
                     className = {Styles.poster}
-                    src = {contest.posterURL || defaultThumbnail.src}
+                    src = {contest.posterURL || "/static/images/rc2k_Image.png" /* Default thumbnail */}
                     alt = {contest.name || "Unknown contest"}
                     title = {contest.name || "Unknown contest"}
                 />
